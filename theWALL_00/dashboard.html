@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Inicio</title>
+    <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/generic.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+    <nav class = "navbar">
+        <h1>
+            <a href = "dashboard.html">
+                <img src="./img/Logo.ico" alt="Logo" class="imgLoged">
+                theWALL
+            </a>
+        </h1>
+
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="¿Busca a alguien?">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+           </button>
+         </div>
+
+        <ul class="links">
+            
+            <li><a href = "dashboard.html">Inicio</a></li>
+            <li><a href = "profiles.html">Personas</a></li>
+            <li><a href = "myprofile.html">Perfil</a></li>
+        </ul>
+    </nav>
+    <section class = "landing">
+        <div class = "dark-overlay">
+            <div class="landing-inner">
+                <div class="PagCont">
+                    <form class="publicar" method="post" >
+                        <label>Crear Publicacion:</label>
+                        <textarea type="text" class="toPost" maxlength="140"></textarea>
+                        <div class="options">
+                            <input type="image" class="imgBtn" src="./img/photo.png" alt="Sube una foto">
+                            <input type="button" class="publBtn" value="Publicar">
+                        </div>
+                        </form>
+                    <div class="wall">
+
+                        <div class="post">
+                            <div class="profPic">
+                                <img src="./img/face.png" alt="Foto de perfil">
+                            </div>
+                            <div class="contPost">
+                                <a href="profile.html" class="usr">Lolito</a>
+                                <p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
+
+                                <div class="imgContenedor">
+                                        <!-- <img src="./img/meme.jpg" alt="imagenPost"> -->
+                                </div>
+                                <button class="likeBtn"><i class="fa fa-heart" aria-hidden="true"></i>
+                                </button>
+                                <span>3</span>
+                            </div>
+                        </div>
+
+                        <div class="post">
+                            <div class="profPic">
+                                <img src="./img/face.png" alt="Foto de perfil">
+                            </div>
+                            <div class="contPost">
+                                <a href="profile.html" class="usr">Lolito</a>
+                                <p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
+
+                                <div class="imgContenedor">
+                                        <img src="./img/meme.jpg" alt="imagenPost">
+                                </div>
+                                <button class="likeBtn"><i class="fa fa-heart" aria-hidden="true"></i>
+                                </button>
+                                <span>3</span>
+                            </div>
+                        </div>
+
+                        <div class="post">
+                            <div class="profPic">
+                                <img src="./img/face.png" alt="Foto de perfil">
+                            </div>
+                            <div class="contPost">
+                                <a href="profile.html" class="usr">Lolito</a>
+                                <p class="textPost">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At vitae nesciunt quae aut impedit perferendis accusamus iusto reiciendis quos mollitia saepe, temporibus quidem praesentium omnis doloremque amet commodi ipsum nihil?</p>
+
+                                <div class="imgContenedor">
+                                        <img src="./img/meme.jpg" alt="imagenPost">
+                                </div>
+                                <button class="likeBtn">
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                </button>
+                                <span>3</span>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

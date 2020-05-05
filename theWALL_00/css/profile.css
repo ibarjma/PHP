@@ -1,0 +1,101 @@
+<<<<<<< HEAD
+.bg-image {
+  /* The image used */
+  background-image: url(./../img/zoom-backgrounds-00009.jpg);
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+
+
+.wrapper {
+  display: grid;
+  justify-content: flex-start;
+  max-width: none;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
+  grid-template-areas: 
+      "a a a a b b b b"
+      "a a a a b b b b"
+      "a a a a b b b b"
+      "c c c c d d d d"
+      "c c c c d d d d";
+  }
+  .item1 {
+    display: inline;
+=======
+.landing3 {
+  position: relative;
+  background: url(./../img/zoom-backgrounds-00009.jpg) no-repeat center center/cover;
+  height: 100vh;}
+ 
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  justify-content: flex-start;
+  max-width: none;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
+  grid-template-areas: 
+      "a a  b b b b"
+      "a a  b b b b"
+      "a a  b b b b"
+      "c c  d d d d"
+      "c c  d d d d";
+  }
+  .item1 {
+    display: inline-block;;
+>>>>>>> 96e124cec591649cd7fe02be86e8d1a694e1eb6e
+    grid-area: a;
+    align-self: start;
+   
+  }
+<<<<<<< HEAD
+  .item2 {display: inline;
+=======
+  .item2 {
+    display:inline-block;
+>>>>>>> 96e124cec591649cd7fe02be86e8d1a694e1eb6e
+    grid-area: b;
+
+  }
+<<<<<<< HEAD
+  .item3 {display: inline;
+=======
+  .item3 {display: inline-block;;
+>>>>>>> 96e124cec591649cd7fe02be86e8d1a694e1eb6e
+    grid-area: c;
+    justify-self: end;
+    align-self: end;
+
+  }
+<<<<<<< HEAD
+  .item4 {display: inline;
+=======
+  .item4 {display: inline-block;
+>>>>>>> 96e124cec591649cd7fe02be86e8d1a694e1eb6e
+    grid-area: d;
+    justify-self: auto;
+    justify-content: flex-end;
+
+<<<<<<< HEAD
+  }
+  .landing {
+    position: absolute;
+    background: url(./../img/zoom-backgrounds-00009.jpg) no-repeat center center/cover;
+    height: 100vh;
+    min-height: 100%;}
+=======
+
+  }
+>>>>>>> 96e124cec591649cd7fe02be86e8d1a694e1eb6e
