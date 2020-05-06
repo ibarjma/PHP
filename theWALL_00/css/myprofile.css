@@ -202,14 +202,15 @@ form .options .publBtn{
   color: #3f8650;
 }
 /* -------------------------------------------------------- */
+.listadef{
+  justify-content: space-evenly;
+}
 .profilelista{
   display: list-item;
 }
 ul {
   list-style-image: url(getProfile);
-
 }
-
 .instructions-panel{
   height: 100%;
   width: 100%;
@@ -224,7 +225,7 @@ ul {
   height: 25%;
 }
 .pCont form{
-  height: 50%;
+  height: 235px;
   max-height: 60%; 
   display: flex;
   flex-direction: column;
@@ -233,10 +234,13 @@ ul {
 }
 .pCont fieldset{
   justify-self: start;
-  height: 20%;
+  height: 90%;
 }
 .pCont ol{
   overflow: scroll;
   height: inherit;
-}
   
+}
+  /*-------------------------------------  */
+  .lead{
+  }
