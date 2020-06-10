@@ -8,8 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>theWALL</title>
+    <title>Registrarse</title>
     <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
+    <script src="./js/register.js"></script>
     <link rel = "stylesheet" type = "text/css" href = "./css/header.css"/> 
     <link rel = "stylesheet" type = "text/css" href = "./css/register.css"/>
     <link rel = "stylesheet" type = "text/css" href = "./css/generic.css"/> 
@@ -37,20 +38,20 @@
             <p class = "lead">
               Crea una cuenta
           </p>
-          <form class="registro" method="post" action="dashboard.html" ><!-----ver dif entre action y method-->
-                  <input type="text" placeholder="Nombre de Usuario" name="usr" class="imputtext" required>
+          <form class="registro" method="post" action="form_action.php">
+                  <input type="text" placeholder="Nombre de Usuario" name="usr" class="imputtext" >
                   
-                  <input type="text" placeholder="Nombre" name="usr_name" class="imputtext" required>
+                  <input type="text" placeholder="Nombre" name="usr_name" class="imputtext" >
             
-                  <input type="email" class = "imputtext" name="email" placeholder="Email" required>
+                  <input type="email" class = "imputtext" id="email" name="email" placeholder="Email" >
              
-                  <input type="pass" id="pass" placeholder="Contraseña" name="passwd" class="imputtext" required minlength="6">
+                  <input type="pass" id="pass" placeholder="Contraseña" name="passwd" class="imputtext" >
           
-                  <input type="repeatpass" placeholder="Repetir Contraseña" name="passwd" class="imputtext" required minlength="6">
+                  <input type="repeatpass" placeholder="Repetir Contraseña" name="passwd" class="imputtext">
                   <br>
                   <label for="circulo">Elige una imagen de perfil</label>
                   <br>
-                  <input type="file" accept="image/*,.jpg" id="circulo" name="perfilimagen" class="perfil" required>
+                  <input type="file" accept="image/*,.jpg" id="circulo" name="perfilimagen" class="perfil">
                   
                   <input class="boton" type="submit" value = "submit"/>
   
@@ -62,13 +63,3 @@
     </div>
 </section>
 </body>
-
-
-</body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
-</html>

@@ -65,3 +65,21 @@ function checkForm()
     }
     return true;
   }
+
+  document.getElementById('email').addEventListener('input', function() {
+    campo = event.target;
+    valido = document.getElementById('emailOK');
+        
+    emailRegex = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
+    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+    if (emailRegex.test(campo.value)) {
+      valido.innerText = "Email válido";
+    } else {
+      valido.innerText = "Email incorrecto";
+    }
+});
+
+
+
+
+
