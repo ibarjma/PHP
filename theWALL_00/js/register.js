@@ -1,83 +1,48 @@
-// Funcion que se mandó llamar con el onsubmit del form. 222WWWwww
-function checkForm()
-  {
-    // Ponemos la sección del form en una variable
-    var form = document.f_registro
+  var user = document.getElementsByName('usr').value;
+  var nombre = document.getElementsByName('usr_name').value;
+  var email = document.getElementsByName('email').value;
+  var pass = document.getElementsByName('passwd').value;
+  var confirmpass = document.getElementsByName('confirmpasswd').value;
+  var userRegex= /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/
+  var nombreRegex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/
+  var emailRegex = /^[^@]+@[^@][^@\.]+[^@]$/
+  var passRegex= /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
 
-    // Evaluamos usando la variable del form + .nameDelInput + .value
-    if(form.nombre.value == ""){
-        // Ponemos una alerta por el error encontrado
-        alert("Error: Falta Nombre Completo");
-        form.preventDefault()
-      return false;
-    }
-    if(form.user.value == "") {
-      alert("Error: Falta nombre de usuario");
-      form.preventDefault()
-      return false;
-    }
-    re = /^([A-Za-z]+\s)+([A-Za-z]+)$/;
-    if(!re.test(form.nombre.value)) {
-      alert("Error: Nombre no valido");
-      form.preventDefault()
-      return false;
-    }
-    re = /^\w+$/;
-    if(!re.test(form.user.value)) {
-        alert("Error: Nombre de usuario no valido.");
-        form.preventDefault()
-        return false;
-      }
 
-    if(form.pswd.value != "" && form.pswd.value == form.pswdC.value) {
-      if(form.pswd.value.length < 8) {
-        alert("Error: El pasword debe ser de minimo 8 caracteres!");
-        form.preventDefault()
+function validarFormulario() {
+
+    if(user==="" || !userRegex.test(user)){
+      alert("Debe ingresar un nombre de usuario válido");
+      document.validacion.usr.focus();
+      return false;
+    }else{
+      if(nombre==="" || !nombreRegex.test(nombre)){
+        alert("Debe ingresar un nombre válido");
+        document.validacion.usr_name.focus();
         return false;
-      }
-      if(form.pswd.value == form.usr.value) {
-        alert("Error: El password debe ser diferente al usuario!");
-        form.preventDefault()
+    }else{
+      if(email==="" || !(emailRegex.test(email)){
+        alert("Debe ingresar un email válido");
+        document.validacion.email.focus();
         return false;
-      }
-      re = /[0-9]/;
-      if(!re.test(form.pswd.value)) {
-        alert("Error: El pasword debe terner por lo menos un numero!");
-        form.preventDefault()
+    } else{
+      if(pass==="" || !passRegex.test(pass)){
+        alert("Debe ingresar una contraseña válida");
+        document.validacion.pass.focus();
         return false;
-      }
-      re = /[a-z]/;
-      if(!re.test(form.pswd.value)) {
-        alert("Error: El pasword debe contener al menos una minuscula");
-        form.preventDefault()
-        return false;
-      }
-      re = /[A-Z]/;
-      if(!re.test(form.pswd.value)) {
-        alert("Error: El pasword debe tener al menos una mayuscula");
-        form.preventDefault()
-        return false;
-      }
     } else {
-      alert("Error: Los passwords no coinciden");
-      form.preventDefault()
-      return false;
+      if (confirmpass !== pass){
+        alert("Debe ingresar la misma contraseña nuevamente");
+        document.validacion.pass.focus();
+        return false;
+      } else {
+        alert("El formulario ha sido enviado con éxito.")
+            }
+          }
+        }
+      }
     }
-    return true;
   }
-
-  document.getElementById('email').addEventListener('input', function() {
-    campo = event.target;
-    valido = document.getElementById('emailOK');
-        
-    emailRegex = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
-    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
-    if (emailRegex.test(campo.value)) {
-      valido.innerText = "Email válido";
-    } else {
-      valido.innerText = "Email incorrecto";
-    }
-});
 
 
 
