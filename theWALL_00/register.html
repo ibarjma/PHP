@@ -10,7 +10,7 @@
 
     <title>Registrarse</title>
     <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-    <script src="./js/register.js"></script>
+    <script type="text/javascript" src="./js/register.js"></script>
     <link rel = "stylesheet" type = "text/css" href = "./css/header.css"/> 
     <link rel = "stylesheet" type = "text/css" href = "./css/register.css"/>
     <link rel = "stylesheet" type = "text/css" href = "./css/generic.css"/> 
@@ -38,23 +38,23 @@
             <p class = "lead">
               Crea una cuenta
           </p>
-          <form name="validacion" class="registro" method="post" onsubmit="return validarFormulario()" action="registrar.php">
-                  <input type="text" placeholder="Nombre de Usuario" name="usr" class="imputtext" >
+          <form id="validacion" class="registro" method="POST">
+                  <input type="text" placeholder="Nombre de Usuario" id="usr" class="imputtext" >
                   
-                  <input type="text" placeholder="Nombre" name="usr_name" class="imputtext" >
+                  <input type="text" placeholder="Nombre" id="usr_name" class="imputtext" >
             
-                  <input type="text" class = "imputtext" id="email" name="email" placeholder="Email" ><h1 id="emailOK"></h1>
+                  <input type="text"  placeholder="Email" id="email" class = "imputtext">
              
-                  <input type="pass" id="pass" placeholder="Contraseña" name="passwd" class="imputtext" >
+                  <input type="pass" id="passwd" placeholder="Contraseña" class="imputtext" >
           
-                  <input type="repeatpass" placeholder="Repetir Contraseña" name="confirmpasswd" class="imputtext">
+                  <input type="repeatpass" placeholder="Repetir Contraseña" id="confirmpasswd" class="imputtext">
                   <br>
                   <label for="circulo">Elige una imagen de perfil</label>
                   <br>
                   <input type="file" accept=".jpg" id="circulo" name="perfilimagen" class="perfil">
                   
                   <input class="boton" id="confirm" type="submit" value ="Enviar"/>
-  
+                  <p id="error"></p>
           </form>
           <p class="reg">
               Ya tienes una cuenta? <a href="login.html">Ingresa</a>

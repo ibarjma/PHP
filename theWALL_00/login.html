@@ -14,6 +14,7 @@
     <link rel = "stylesheet" type = "text/css" href = "./css/generic.css"/>
     <link rel = "stylesheet" type = "text/css" href = "./css/login.css"/>
 
+    <script src="./js/login.js"></script>
 </head>
 <body>
     <nav class = "navbar">
@@ -36,10 +37,11 @@
             <div class="text-sup">
                 <h1>Iniciar Sesión</h1>
             </div>
-            <form class="login" method="post">
-                <input type="text" name="usr_name" class="inputtext" placeholder="Nombre de Usuario">
-                <input id="pass" type="password" name="passwd" class="inputtext" placeholder="Contrase&ntilde;a">
+            <form id="log_in" class="login" method="post">
+                <input type="text" id="usr_name" class="inputtext" placeholder="Nombre de Usuario">
+                <input id="pass" type="password" id="passwd" class="inputtext" placeholder="Contrase&ntilde;a">
                 <input type="submit" class="boton btn btn-primary" value="Iniciar Sesion">
+                <p id="error"></p>
             </form>
             <div class="separador">
                 <div class="row"></div>
