@@ -32,7 +32,6 @@ $_SESSION
             </a>
         </h1>
         <ul>
-            <li><a href = "profiles.html">Personas</a></li>
             <li><a href = "register.php">Registrarse</a></li>
             <li><a href = "login.html">Iniciar Sesión</a></li>
         </ul>
