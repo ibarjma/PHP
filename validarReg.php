@@ -25,33 +25,34 @@ if(isset($_POST)){
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
     
 
-    if(!is_dir('images')){
-		mkdir('images', 0777);
-	}
+    // if(!is_dir('images')){
+	// 	mkdir('images', 0777);
+	// }
 	
-	move_uploaded_file($imagen['tmp_name'], 'images/'.$nombre.$ext);
+	// move_uploaded_file($imagen['tmp_name'], 'images/'.$filename.$ext);
 	
-	// header("Refresh: 5; URL=index.php");
-	echo "<h1>Imagen subida correctamente</h1>";
-    // var_dump($ext);
+	// // header("Refresh: 5; URL=index.php");
+	// echo "<h1>Imagen subida correctamente</h1>";
+    // // var_dump($ext);
 
 
-			$gestor = opendir('./images');
+	// 		$gestor = opendir('./images');
 			
-			if($gestor):
-				while(($imagen = readdir($gestor)) !== false):
-					if($imagen != '.' && $imagen != '..'):
-						echo "<img src='images/$imagen' width='200px'/><br/>";
-					endif;
-				endwhile;
-			endif;
+	// 		if($gestor):
+	// 			while(($imagen = readdir($gestor)) !== false):
+	// 				if($imagen != '.' && $imagen != '..'):
+	// 					echo "<img src='images/$imagen' width='200px'/><br/>";
+	// 				endif;
+	// 			endwhile;
+	// 		endif;
 
     
 
     // $sql = "INSERT INTO usuarios VALUES( '' , '$apellido', '$nombre','$email', '$user', '$password', '$imagen', '$ext')";
 	// $guardar = mysqli_query($conn, $sql);
 	// Array de errores
-	$errores = array();
+    
+    $errores = array();
 	
 	// Validar que el user no exista y que la imagen esté definida
 
@@ -78,4 +79,4 @@ if(isset($_POST)){
 		$_SESSION['errores'] = $errores;
 	}
 }
-// header('Location: index.php');
+header('Location: index.php');
