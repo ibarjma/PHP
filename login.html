@@ -24,9 +24,7 @@
             </a>
         </h1>
         <ul>
-            <li><a href = "profiles.html">Personas</a></li>
-            <li><a href = "register.html">Registrarse</a></li>
-            <li><a href = "login.html">Iniciar Sesión</a></li>
+            <li><a href = "register.php">Registrarse</a></li>
         </ul>
     </nav>
 <section class = "landing2">
@@ -36,7 +34,7 @@
             <div class="text-sup">
                 <h1>Iniciar Sesión</h1>
             </div>
-            <form id="log_in" class="login" onsubmit="return validaringreso()" method="POST">
+            <form id="log_in" class="login" onsubmit="return validaringreso()" action="dashboard.html" method="POST">
                 <input type="text" id="usr_name" class="inputtext" placeholder="Nombre de Usuario">
                 <input type="password" id="passwd" class="inputtext" placeholder="Contrase&ntilde;a">
                 <input type="submit" class="boton btn btn-primary" value="Iniciar Sesion">
