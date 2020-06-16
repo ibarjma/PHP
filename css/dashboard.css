@@ -151,18 +151,14 @@ form .options .publBtn{
 .wall .post .contPost .likeBtn{
     padding: 5px;
     margin: 5px;
-    height: 25px;
+    height: 30px;
     background: none;
     border: 0;
-    color: #2dbc4e;
+    color: #505250;
 }
 
 
 .wall .post .contPost .likeBtn:hover{
-    padding: 5px;
-    margin: 5px;
-    height: 25px;
-    background: none;
-    border: 0;
-    color: #3f8650;
+    cursor: pointer;
+    color: #2dbc4e;
 }
