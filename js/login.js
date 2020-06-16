@@ -1,14 +1,13 @@
-const nombre = document.getElementById('usr_name');
-const pass = document.getElementById('passwd');
-const validacion = document.getElementById('log_in');
 
-
-validacion.addEventListener("submit", ev =>{ 
-  ev.preventDefault();
-  let avisos= true
+function validaringreso(){ 
+  var user = document.getElementById('usr_name');
+  var pass = document.getElementById('passwd');
+  var parrafo = document.getElementById("error")
+  let avisos= false
   let errores = ""
 
   parrafo.innerHTML = ""
+  
   if(user.value == "" || user.value == null){
     errores += "Debe ingresar un nombre de usuario <br>"
   }
@@ -18,9 +17,11 @@ validacion.addEventListener("submit", ev =>{
   } 
     if(avisos){
       parrafo.innerHTML = errores
+      return false
     }else{
-    parrafo.innerHTML = "El formulario ha sido enviado con éxito."
+    alert("El formulario ha sido enviado con éxito.")
+    return true
           }
-        })
+        }
 
     

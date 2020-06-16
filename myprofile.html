@@ -33,12 +33,8 @@
         <div class="item2">
           <img id="myphoto" class="round-img my-1"  src="./img/face.png" >
           <h1 id="myname">Nombre</h1>
-        
-          <ld id="myusuario" class="lead">nombre de usuario</ld><span style="float: right; padding-right: 10px;" class="icons my-1">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-          </span>  <br>    
+         
+          <ld id="myusuario" class="lead">nombre de usuario</ld><br>
           <input type="button" id="editar" style="margin-top: 10px;" name="edit" value="Editar Perfil">
         </div>
         <div class="item1">
@@ -51,11 +47,11 @@
           <div class="line" style="margin: 0em;"></div>
 
           <form class="publicar" method="post" >
-            <h3 class="p-1 text-primary"> Crea una publicación </h2>
+            <h3 class="p-1 text-primary"> Crea una publicación </h3>
             <textarea type="text" class="toPost" maxlength="140"></textarea>
             <div class="options">
-                <input type="file" class="imgBtn" src="./img/photo.png" alt="Sube una foto">
-                <input type="button" class="btn btn-primary" value="Publicar">
+                <input name="botonpubli" type="file" class="imgBtn" accept="image/png,image/gif,image/jpeg" src="./img/photo.png" alt="Sube una foto">
+                <input type="submit" class="btn btn-primary" value="Publicar">
             </div>
           </form>
 

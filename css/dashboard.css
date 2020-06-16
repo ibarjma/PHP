@@ -1,3 +1,10 @@
+.botonimagen{
+    /*background: url(../img/photo.png) no-repeat;
+    cursor: pointer*/
+    margin: 5px;
+    padding: 5px;
+}
+
 .landing {
   /* position: absolute; */
   background: url(./../img/zoom-backgrounds-00013.jpg) no-repeat center center/cover;
@@ -54,8 +61,8 @@ form label{
 }
 
 form textarea{
-    width: 80%;
-    height: 60px;
+    width: 100%;
+    min-height: 100px;
     resize: none;
     font-size: 16px;
     border-radius: 5px;
@@ -65,10 +72,7 @@ form textarea{
 
 form .options{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    width: 80%;
-
     margin: 10px;
 }
 
@@ -101,7 +105,7 @@ form .options .publBtn{
     justify-content: stretch;
 
     flex: 50%;
-    max-width: 50%;
+    max-width: 75%;
     padding: 0 4px;
 
     margin-top: 10px;

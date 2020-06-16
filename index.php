@@ -1,6 +1,15 @@
+<?php 
+session_start();
+$_SESSION['var_persistente'] = "algo para la sesion";
+$_SESSION
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
+      
+      
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +33,7 @@
         </h1>
         <ul>
             <li><a href = "profiles.html">Personas</a></li>
-            <li><a href = "register.html">Registrarse</a></li>
+            <li><a href = "register.php">Registrarse</a></li>
             <li><a href = "login.html">Iniciar Sesión</a></li>
         </ul>
     </nav>
@@ -40,7 +49,7 @@
                    La red social que revolucionará el planeta
                 </p>
                 <div class="buttons">
-                    <a href="register.html" class = "btn btn-primary">Registrate</a>
+                    <a href="register.php" class = "btn btn-primary">Registrate</a>
                     <a href="login.html" class = "btn btn-light">Inicia Sesión</a>
                 </div>
             </div>
