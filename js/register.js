@@ -1,5 +1,5 @@
 function validar(){
-  var nombre = document.getElementById('usr');
+  var nombre = document.getElementById('name');
   var ape = document.getElementById('apellido');
   var usr = document.getElementById('usr_name');
   var email = document.getElementById('email');
@@ -12,7 +12,7 @@ function validar(){
   let userRegex= /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/
   let nombreRegex = /^[A-Za-z]+(?:[ _-][A-Za-z]+)*$/
   let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-  let passRegex= /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/
+  let passRegex= /^((?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~])|(?=.*\d))(?=.*[a-z])(?=.*[A-Z]).{6,}$/
   parrafo.innerHTML = "";
   if(!userRegex.test(usr.value)){
     errores += "Debe ingresar un nombre de usuario válido <br>";

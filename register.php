@@ -40,7 +40,7 @@
                     <img src="./img/Logo.png" alt="Logo"class="logoMed">
                     <h1 class = "x-large">Crea una cuenta</h1>
                     <form id="validacion" class="registro" onsubmit="return validar()" action="validarReg.php" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="user" placeholder="Nombre" id="usr" class="imputtext" >
+                        <input type="text" name="user" placeholder="Nombre" id="name" class="imputtext" >
                         
                         <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" >
 
