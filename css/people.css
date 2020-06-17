@@ -1,11 +1,11 @@
-.botonimagen{
+.people .botonimagen{
     /*background: url(../img/photo.png) no-repeat;
     cursor: pointer*/
     margin: 5px;
     padding: 5px;
 }
 
-.landing {
+.people .landing {
   /* position: absolute; */
   background: url(./../img/zoom-backgrounds-00013.jpg) no-repeat center center/cover;
   height: 100vh;
@@ -14,7 +14,7 @@
   
 }
 
-.landing-inner {
+.people .landing-inner {
   color: #fff;
   height: 100%;
     position: relative;
@@ -27,11 +27,11 @@
   
 }
 
-.navbar img{
+.people .navbar img{
     width: 35px;
 }
 
-.empty{
+.people .empty{
     height: 50px;
     width: 100%;
     max-width: 100%;
@@ -41,8 +41,9 @@
     display: flex;
     padding: 0 4px;
     justify-content: center;
-    align-content: center;
     flex-flow: row wrap;
+    overflow: auto;
+    max-height: 100%;
 }
 
 .resultados .person{
@@ -59,7 +60,7 @@
     margin: 15px 15px;
 }
 
-.resultados .person .profPic{
+.person .profPic{
     flex-grow: 0;
 
     display: flex;
@@ -69,32 +70,32 @@
     margin: 10px;
 }
 
-.resultados .person .profPic img{
+.person .profPic img{
     height: 50px;
     width: auto;
     overflow: hidden;
     border-radius: 25px;
 }
 
-.resultados .person .description{
+.person .description{
     width: 300px;
     padding-left: 10px ;
 }
 
-.resultados .person .description .usr_name{
+.person .description .usr_name{
     box-sizing: border-box;
 }
 
-.resultados .person .description .usr{
+.person .description .usr{
     line-height: 1.4;
     margin: 1px 0 15px;
 }
 
-.resultados .person .follow{
+.person .follow{
     width: 120px;
 }
 
-.resultados .person .follow .followButton{
+.person .follow .followButton{
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -108,6 +109,6 @@
     width: 120px;
 }
 
-.resultados .person .follow .unfollowButton{
+.person .follow .unfollowButton{
     background-color: #505250;
 }

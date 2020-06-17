@@ -7,186 +7,214 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>Mi Perfil</title>
   <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
   <link rel="stylesheet" type="text/css" href="./css/header.css" />
   <link rel="stylesheet" type="text/css" href="./css/myprofile.css" />
   <link rel="stylesheet" type="text/css" href="./css/generic.css" />
+  <link rel="stylesheet" href="css/people.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="js/people.js"></script>
+  <script src="js/post.js"></script>
 </head>
 
-<body style="color: aliceblue;">
-  <nav style="justify-content: flex-end;" class = "navbar">
-    <h1>
-        <a href = "dashboard.html">
-            <img src="./img/Logo.ico" alt="Logo" class="imgLoged">
-            theWALL
-        </a>
-    </h1>
-  </nav>
-  <section class="landing3">
-   <div class="dark-overlay">
-    <div class="landing-inner"> 
-     <div class="wrapper">
-        <div class="item2">
-          <img id="myphoto" class="round-img my-1"  src="./img/face.png" >
-          <h1 id="myname">Nombre</h1>
-         
-          <ld id="myusuario" class="lead">nombre de usuario</ld><br>
-          <input type="button" id="editar" style="margin-top: 10px;" name="edit" value="Editar Perfil">
-        </div>
-        <div class="item1">
-          <h2 class="p-1 text-primary">
-            Bio
-          </h2>
-          <p class="p-1">
-            incluir un texto.
-          </p>
-          <div class="line" style="margin: 0em;"></div>
-
-          <form class="publicar" method="post" >
-            <h3 class="p-1 text-primary"> Crea una publicación </h3>
-            <textarea type="text" class="toPost" maxlength="140"></textarea>
-            <div class="options">
-                <input name="botonpubli" type="file" class="imgBtn" accept="image/png,image/gif,image/jpeg" src="./img/photo.png" alt="Sube una foto">
-                <input type="submit" class="btn btn-primary" value="Publicar">
-            </div>
-          </form>
-
-          <div class="line" style="margin: 0em;"></div>
-              <h2 class="p-1 text-primary">
-               Siguiendo
-               </h2>
-              <div class="pCont">
-                <form id="following" method="GET" action="seguidos">
-                <fieldset>
-                  <ol title="seg" id="listafollow" class="listadef" >
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                      <li class="user" id=""><span class="p-1"> un x  </span><input type="button" class="btn"  value="Dejar de Seguir"> 
-                      </li>
-                    </ol>
-                  </fieldset>
-                </form>  
-            
-           </div>
-        </div>
-        
-        <div class="item4">
-            <h2 style="margin-top: 5px;" class="p-1 text-primary">
-              <div class="line" style="margin-bottom: 5px;"></div>
-               Publicaciones
-              </h2>
-              <div class="PagCont">
-                <div class="wall">           
-                  <form  id="mispubli" method="GET" action="publis">
-          
-                    <div class="post">
-                  
-                      <div class="profPic">
-                        <img src="./img/face.png" alt="Foto de perfil">
-                  
-                      </div>
-                  
-                      <div class="contPost">
-                    
-                        <a href="profile.html" class="usr">Lolito</a>
-                        <p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
-
-                        <div class="imgContenedor">
-                                <img src="./img/meme.jpg" alt="imagenPost">
-                        </div>
-                        <button class="likeBtn"><i class="fa fa-heart" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="post">
-                  
-                      <div class="profPic">
-                        <img src="./img/face.png" alt="Foto de perfil">
-                  
-                      </div>
-                  
-                      <div class="contPost">
-                    
-                        <a href="profile.html" class="usr">Lolito</a>
-                        <p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
-
-                        <div class="imgContenedor">
-                                <img src="./img/meme.jpg" alt="imagenPost">
-                        </div>
-                        <button class="likeBtn"><i class="fa fa-heart" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                    </div>   
-                  </form>
-                </div>
-              </div>          
-            </div>   
-          </div>
-        </div>
-  </section>  
-      
-    <footer id="footer">
-    <a href="dashboard.html" class="btn izq">Volver al Inicio</a><span class="m-1 p-1"> Creado por: Guillermo Ballesteros & Juan Manuel Ibarra</span>
-   </footer>
-  </section>
-
-
-
-
-
-
+<body>
+  	<nav class = "navbar">
+    	<h1>
+      		<a href = "dashboard.html">
+        		<img src="./img/Logo.ico" alt="Logo" class="imgLoged">
+        		theWALL
+      		</a>
+    	</h1>
+    	<div class="search">
+    	  	<input type="text" class="searchTerm" placeholder="¿Busca a alguien?">
+    	  	<button type="submit" class="searchButton">
+    	  	    <a class="fa fa-search" href="people.html"></a>
+    	  	</button>
+    	</div>
+    	<ul class="links">
+    	  	<li><a href = "dashboard.html">Inicio</a></li>
+    	  	<li><a href = "myprofile.html">Perfil</a></li>
+    	  	<li><a href = "index.php">Cerrar sesión</a></li>
+    	</ul>
+  	</nav>
+  	<section class = "landing">
+    	<div class = "dark-overlay">
+      		<div class="landing-inner">
+				<div class="detalles">
+					<div class="perfil">
+						<div class="profPic">
+							<img src="./img/face.png" alt="Foto de perfil">
+						</div>
+						<div class="names">
+							<h2>Nombre Completo</h2>
+							<h3>userName</h3>
+						</div>
+					</div>
+					<hr>
+					<div class="siguiendo">
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+						<div class="person">
+							<div class="profPic">
+								<img src="./img/face.png" alt="Foto de perfil">
+							</div>
+							<div class="description">
+								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
+								<p class="usr">pacostorm201</p>
+							</div>
+	
+							<div class="follow">
+								<button class="followButton unfollowButton" onclick=follow(this)>Dejar de seguir</button>   
+							</div>
+						</div>
+					</div>
+					<div class="editProfile">
+						<a href="editProfile.html"><button class="editProfBtn" >Editar Perfil</button></a>
+					</div>
+				</div>
+        		<div class="publicaciones">
+          			<form class="publicar" method="post" >
+            			<label>Crear Publicacion:</label>
+            			<textarea type="text" class="toPost" maxlength="240"></textarea>
+            			<div class="options">
+            			    <input type="file" class="botonimagen" alt="Sube una foto" accept="image/png,image/gif,image/jpeg">
+            			    <input type="submit" class="publBtn" value="Publicar">
+            			</div>
+          			</form>
+					<div class="wall">
+            			<div class="post">
+              				<div class="profPic">
+              				  	<img src="./img/face.png" alt="Foto de perfil">
+              				</div>
+              				<div class="contPost">
+              				  	<a href="profile.html" class="usr">Lolito</a>
+              				  	<p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
+								<div class="imgContenedor"></div>
+								<div class="downPost">
+									<div class="like">
+										<i class="likeBtn fa fa-heart fa-heart-o" aria-hidden="true" onclick=like(this)></i>
+										<span id="counter">3</span>
+									</div>
+									<i class="borrar fa fa-trash "></i>
+								</div>
+              				</div>
+						</div>
+            			<div class="post">
+            			  	<div class="profPic">
+            					<img src="./img/face.png" alt="Foto de perfil">
+            			  	</div>
+            			  	<div class="contPost">
+            			      	<a href="profile.html" class="usr">Lolito</a>
+            			      	<p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
+            			      	<div class="imgContenedor">
+            			      	  <img src="./img/meme.jpg" alt="imagenPost">
+            			      	</div>
+            			      	<div class="downPost">
+									<div class="like">
+										<i class="likeBtn fa fa-heart fa-heart-o" aria-hidden="true" onclick=like(this)></i>
+										<span id="counter">3</span>
+									</div>
+									<i class="borrar fa fa-trash "></i>
+								</div>
+            			  	</div>
+            			</div>                
+          			</div>
+				</div>
+     		 </div>
+    	</div>
+  	</section>
 </body>
 </html>
