@@ -15,26 +15,20 @@ if(isset($_POST)){
 	$nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
 	$email = $_POST['email'];
-    $password = $_POST['pass'];
-    $imagen = $_FILES['perfilimagen'];
-
-    // var_dump($imagen);
-    
-    
-    $filename =  $imagen['name'];
+    $pas = $_POST['pass'];
+	
+	$imagen = $_FILES['perfilimagen'];
+	$contenido = addslashes(file_get_contents($imagen['tmp_name']));
+	
+	$filename =  $_FILES['perfilimagen']['name'];
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    
 
+	
     // if(!is_dir('images')){
 	// 	mkdir('images', 0777);
 	// }
 	
-	// move_uploaded_file($imagen['tmp_name'], 'images/'.$filename.$ext);
-	
-	// // header("Refresh: 5; URL=index.php");
-	// echo "<h1>Imagen subida correctamente</h1>";
-    // // var_dump($ext);
-
+	// move_uploaded_file($imagen['tmp_name'], 'images/'.$filename);
 
 	// 		$gestor = opendir('./images');
 			
@@ -46,33 +40,23 @@ if(isset($_POST)){
 	// 			endwhile;
 	// 		endif;
 
-    
-
-    // $sql = "INSERT INTO usuarios VALUES( '' , '$apellido', '$nombre','$email', '$user', '$password', '$imagen', '$ext')";
-	// $guardar = mysqli_query($conn, $sql);
-	// Array de errores
-    
-    $errores = array();
-	
 	// Validar que el user no exista y que la imagen esté definida
+	$errores = 0;
 
-	
-	$guardar_usuario = false;
-    
-
-	if(count($errores) == 0){
-		
+	if($errores == 0){
 		// Cifrar la contraseña
-		$password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+		$password_segura = password_hash($pas, PASSWORD_BCRYPT, ['cost'=>4]);
 		
 		// INSERTAR USUARIO EN LA TABLA USUARIOS DE LA BBDD
-		$sql = "INSERT INTO usuarios VALUES( '' , '$apellido', '$nombre','$email', '$user', '$password_segura', '$imagen', '$ext')";
+
+		$sql = "INSERT INTO usuarios VALUES ( '', '$apellido', '$nombre', '$email', '$user', '$pas', '$contenido' , '$ext')";
 		$guardar = mysqli_query($conn, $sql);
+		var_dump($guardar);
 
 		if($guardar){
-			$_SESSION['completado'] = "El registro se ha completado con éxito";
+			$_SESSION['completado'] = "El registro se ha completado con éxito: inicia sesión.";
 		}else{
-			$_SESSION['errores']['general'] = "El usuario no se pudo registrar";
+			$_SESSION['errores'] = "El usuario no se pudo registrar";
 		}
 		
 	}else{

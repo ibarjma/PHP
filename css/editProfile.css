@@ -6,15 +6,8 @@
 
 .x-large {
     line-height: 1.2;
-    font-size: 45px;
+    font-size: 35px;
     margin-bottom: 1rem;
-}
-
-.lead {
-   font-size: 30px;
-   margin-bottom: 1rem;
-   color: #f4f4f4;
- 
 }
 
 .landing {
@@ -65,11 +58,7 @@
 }
 
 .internal .campo{
-    margin: 20px 50px;
-
     flex: 40%;
-    max-width: 40%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,8 +66,12 @@
     text-align: center;
 }
 
-.internal .campo{
-
+.internal .campo .preview{
+    height: 50px;
+    width: auto;
+    display: none;
+    border-radius: 25px;
+    margin: 10px;
 }
 
 .internal input{

@@ -13,6 +13,7 @@
     <link rel = "stylesheet" type = "text/css" href = "./css/header.css"/> 
     <link rel = "stylesheet" type = "text/css" href = "./css/editProfile.css"/>
     <link rel = "stylesheet" type = "text/css" href = "./css/generic.css"/> 
+    <script src="js/editProfile.js"></script>
   </head>
   <body>
     <nav class = "navbar">
@@ -26,8 +27,8 @@
         <ul class="links">
             
             <li><a href = "dashboard.html.html">Inicio</a></li>
-            <li><a href = "profiles.html">Personas</a></li>
             <li><a href = "myprofile.html">Perfil</a></li>
+            <li><a href = "index.php">Cerrar Sesión</a></li>
         </ul>
     </nav>
    <!---------------------------------->
@@ -39,27 +40,29 @@
             <img src="./img/face.png" alt="profPic" class="profPic">
             <h1 class = "x-large">Configuración</h1>
             <div class="internal">
-              <form class="campo" method="post" action="dashboard.html" ><!-----ver dif entre action y method-->
+              <form class="campo" method="post" action="" onsubmit="return validarPerfil()">
                 <h3>Perfil</h3>
 
-                  <input type="text" placeholder="Nombre de Usuario" name="usr" class="imputtext" required value="Usuario0">
+                  <input type="text" placeholder="Nombre de Usuario" id="usr_name" class="imputtext" value="Usuario0">
 
-                  <input type="text" placeholder="Nombre" name="usr_name" class="imputtext" required value="Perfil Ejemplo">
+                  <input type="text" name="user" placeholder="Nombre" id="name" class="imputtext" value="Pancho">
+                        
+                  <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" value="Pantera">
               
                   <label for="circulo">Cambiar foto de perfil</label>
                   <br>
-                  <input type="file" accept="image/*,.jpg" id="circulo" name="perfilimagen" class="perfil" required>
-
-                  <input class="boton" type="submit" value = "Guardar"/>
+                  <input type="file" accept="image/png,image/gif,image/jpeg" name="perfilimagen" class="perfil" id="fileChooser" onchange="return verPreview()">
+                  <img src="" id="preview" class="preview">
+                  <input class="boton" type="submit" value = "Guardar")/>
               </form>
               <div class="divisor"></div>
-              <form action="" class="campo">
+              <form action="" class="campo" method="POST" onsubmit="return validarCuenta()">
                 <h3>Cuenta</h3>
-                <input type="email" class = "imputtext" name="email" placeholder="Email" value="mail@ejemplo.com" required><br>
+                <input type="text" class = "inputtext" id="email" placeholder="Email" value="mail@ejemplo.com"><br>
                 <label for="pass">Cambiar contraseña</label>
                  <br> 
-                <input type="password" id="pass" placeholder="Contraseña" name="passwd" class="imputtext" required value="password" minlength="6" >  
-                <input type="password" placeholder="Repetir Contraseña" name="passwd" class="imputtext" required value="password" minlength="6">
+                <input type="password" placeholder="Contraseña" id="passwd" class="imputtext" value="password">  
+                <input type="password" placeholder="Repetir Contraseña" id="confirmpasswd" class="imputtext" value="password">
                 <input class="boton" type="submit" value = "Guardar"/>
               </form>
             </div>

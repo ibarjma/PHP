@@ -30,8 +30,6 @@
                 </a>
             </h1>
             <ul>
-                <li><a href = "profiles.html">Personas</a></li>
-                <li><a href = "register.html">Registrarse</a></li>
                 <li><a href = "login.html">Iniciar Sesión</a></li>
             </ul>
         </nav>
@@ -40,16 +38,13 @@
             <div class = "dark-overlay">
                 <div class="landing-inner">
                     <img src="./img/Logo.png" alt="Logo"class="logoMed">
-                    <h1 class = "x-large">theWALL</h1>
-                    <p class = "lead">
-                    Crea una cuenta
-                    </p>
+                    <h1 class = "x-large">Crea una cuenta</h1>
                     <form id="validacion" class="registro" onsubmit="return validar()" action="validarReg.php" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="user" placeholder="Nombre de Usuario" id="usr" class="imputtext" >
+                        <input type="text" name="nombre" placeholder="Nombre" id="usr_name" class="imputtext" >
                         
                         <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" >
 
-                        <input type="text" name="nombre" placeholder="Nombre" id="usr_name" class="imputtext" >
+                        <input type="text" name="user" placeholder="Nombre de usuario" id="usr" class="imputtext" >
                         
                         <input type="text" name="email"  placeholder="Email" id="email" class = "imputtext">
                     
@@ -61,7 +56,7 @@
                         <br>
                         <input type="file" accept="image/png,image/gif,image/jpeg" id="circulo" name="perfilimagen" class="perfil">
                         
-                        <input class="boton" id="confirm" type="submit" value ="Enviar"/>
+                        <input class="boton" id="confirm" type="submit" value ="Registrarse"/>
 
                         <p id="error">******************************</p>
                     </form>
