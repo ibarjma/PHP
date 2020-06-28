@@ -40,11 +40,19 @@
                     <img src="./img/Logo.png" alt="Logo"class="logoMed">
                     <h1 class = "x-large">Crea una cuenta</h1>
                     <form id="validacion" class="registro" onsubmit="return validar()" action="validarReg.php" method="POST" enctype="multipart/form-data">
+<<<<<<< HEAD
                         <input type="text" name="user" placeholder="Nombre" id="name" class="imputtext" >
                         
                         <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" >
 
                         <input type="text" name="nombre" placeholder="Nombre de usuario" id="usr_name" class="imputtext" >
+=======
+                        <input type="text" name="nombre" placeholder="Nombre" id="usr_name" class="imputtext" >
+                        
+                        <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" >
+
+                        <input type="text" name="user" placeholder="Nombre de usuario" id="usr" class="imputtext" >
+>>>>>>> 193b6bd1ac86af9a15367b710417c1b73451fc5b
                         
                         <input type="text" name="email"  placeholder="Email" id="email" class = "imputtext">
                     

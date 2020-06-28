@@ -147,9 +147,12 @@ form .options .publBtn{
     margin: 1px 0 15px;
 }
 
+<<<<<<< HEAD
 .post .contPost .imgContenedor{
 }
 
+=======
+>>>>>>> 193b6bd1ac86af9a15367b710417c1b73451fc5b
 .post .contPost i{
     padding: 5px;
     margin: 5px;
@@ -159,8 +162,21 @@ form .options .publBtn{
     color: #505250;
 }
 
-
 .post .contPost .likeBtn:hover{
     cursor: pointer;
     color: #2dbc4e;
 }
+
+<<<<<<< HEAD
+.post .contPost .likeBtn:hover{
+    cursor: pointer;
+    color: #2dbc4e;
+}
+=======
+.srcBtn{
+    background: #17a2b8;
+    padding: 10px;
+    border: 0;
+    align-items: flex-end;
+}
+>>>>>>> 193b6bd1ac86af9a15367b710417c1b73451fc5b

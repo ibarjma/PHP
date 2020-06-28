@@ -1,8 +1,11 @@
 <?php 
-session_start();
-$_SESSION['var_persistente'] = "algo para la sesion";
-$_SESSION
-?>
+    	require_once 'BD.php';
+
+        // Iniciar sesión
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        ?>
 
 <!doctype html>
 <html lang="en">
@@ -31,9 +34,15 @@ $_SESSION
                 theWALL
             </a>
         </h1>
+
+        <form class="search" action="people.php" method="GET">
+            <input type="text" name="busqueda" class="searchTerm" placeholder="¿Busca a alguien?">
+            <input type="submit" value="buscar" class="srcBtn" >
+         </form>
+
         <ul>
             <li><a href = "register.php">Registrarse</a></li>
-            <li><a href = "login.html">Iniciar Sesión</a></li>
+            <li><a href = "login.php">Iniciar Sesión</a></li>
         </ul>
     </nav>
 
@@ -49,10 +58,20 @@ $_SESSION
                 </p>
                 <div class="buttons">
                     <a href="register.php" class = "btn btn-primary">Registrate</a>
-                    <a href="login.html" class = "btn btn-light">Inicia Sesión</a>
-                </div>
+                    <a href="login.php" class = "btn btn-light">Inicia Sesión</a>
+                </div>      
+                <?php
+                        if(isset($_SESSION['completado'])){
+                            echo ($_SESSION['completado']);
+                        }else{
+                            if(isset($_SESSION['errores'])){
+                                echo ($_SESSION['errores']);
+                            }
+                        }
+                ?>
             </div>
         </div>
+
     </section>
 </body>
     <!-- Optional JavaScript -->
