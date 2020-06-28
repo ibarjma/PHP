@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
-// Conexión a la base de datos
-	require_once 'BD.php';
-
 	// Iniciar sesión
 	if(!isset($_SESSION)){
 		session_start();
     }
-    var_dump($_SESSION['usuario']);
+    var_dump($_SESSION['id_usuario']);
     ?>
 <head>
     <meta charset="UTF-8">
@@ -16,17 +13,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Inicio</title>
-    <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="./css/generic.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
-    <script src="./js/post.js"></script>
+    <link rel="icon" href="../img/Logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/generic.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/post.js"></script>
 </head>
 <body class="dashboard ">
     <nav class = "navbar">
         <h1>
             <a href = "dashboard.html">
-                <img src="./img/Logo.ico" alt="Logo" class="imgLoged">
+                <img src="../img/Logo.ico" alt="Logo" class="imgLoged">
                 theWALL
             </a>
         </h1>

@@ -1,11 +1,9 @@
 <?php 
-    	require_once 'BD.php';
-
-        // Iniciar sesión
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        ?>
+    // Iniciar sesión
+    if(!isset($_SESSION)){
+        session_start();
+    }
+?>
 
 <!doctype html>
 <html lang="en">
@@ -42,7 +40,7 @@
 
         <ul>
             <li><a href = "register.php">Registrarse</a></li>
-            <li><a href = "login.php">Iniciar Sesión</a></li>
+            <li><a href = "controller/login.php">Iniciar Sesión</a></li>
         </ul>
     </nav>
 
