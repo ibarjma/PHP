@@ -11,7 +11,7 @@
         $password = $_POST['pass'];
 
         // $login = $con->loguinUser($usuario, password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]));
-        $login = $con->loginUser($usuario, $password); //Este solo lo usaré mientras configuro bien todo.
+        $login = $con->loginUser($usuario, $password); //Este solo lo usaré mientras configuro bien todo
 
         if($login){
             $_SESSION["id_usuario"]=$login;

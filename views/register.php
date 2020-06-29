@@ -1,31 +1,22 @@
 <!doctype html>
 <html lang="en">
-	<?php
-// Conexión a la base de datos
-	require_once 'BD.php';
-
-	// Iniciar sesión
-	if(!isset($_SESSION)){
-		session_start();
-    }
-    ?>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script type="text/javascript" src="./js/register.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Registrarse</title>
-    <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-    <link rel = "stylesheet" type = "text/css" href = "./css/header.css"/> 
-    <link rel = "stylesheet" type = "text/css" href = "./css/register.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "./css/generic.css"/> 
+    <link rel="icon" href="../img/Logo.ico" type="image/x-icon"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/header.css"/> 
+    <link rel = "stylesheet" type = "text/css" href = "../css/register.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/generic.css"/> 
+    <script type="text/javascript" src="../js/register.js"></script>
   </head>
   <body>
         <nav class = "navbar">
             <h1>
-                <a href = "index.php">
+                <a href = "../index.php">
                     theWALL
                 </a>
             </h1>
@@ -37,10 +28,10 @@
         <section class = "landing">
             <div class = "dark-overlay">
                 <div class="landing-inner">
-                    <img src="./img/Logo.png" alt="Logo"class="logoMed">
+                    <img src="../img/Logo.png" alt="Logo"class="logoMed">
                     <h1 class = "x-large">Crea una cuenta</h1>
-                    <form id="validacion" class="registro" onsubmit="return validar()" action="validarReg.php" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="nombre" placeholder="Nombre" id="usr_name" class="imputtext" >
+                    <form id="validacion" class="registro" onsubmit="return validar();" action="register.php" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="nombre" placeholder="Nombre" id="name" class="imputtext" >
                         
                         <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" >
 

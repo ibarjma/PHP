@@ -43,14 +43,21 @@ class Users extends Conexion{
         }
     }
 
-    public function selectSome($id, $campo){
+    public function idByCamp($campo, $elemento){
         try{
-            $query = "SELECT $campo from usuarios WHERE id=$id";
-            $res = $conection->query($query);
+            $query = "SELECT id from usuarios WHERE ".$campo."='".$elemento."'";
+            echo '<script>console.log("``````'.$query.'");</script>';
+            $res = $this->conection->query($query);
+            $this->cerrar();
+            if ($res->num_rows > 0){
+                while($row = $res->fetch_assoc()) {
+                    return $row["id"];
+                }
+            } else {
+                return NULL;
+            }
         }catch (Exception $e){
             echo 'Excepción capturada: ',  $e->getMessage(), "\n";
-        }finally{
-            return $res;
         }
     }
 
