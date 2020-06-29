@@ -9,26 +9,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Configuración</title>
-    <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-    <link rel = "stylesheet" type = "text/css" href = "./css/header.css"/> 
-    <link rel = "stylesheet" type = "text/css" href = "./css/editProfile.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "./css/generic.css"/> 
-    <script src="js/editProfile.js"></script>
+    <link rel="icon" href="../img/Logo.ico" type="image/x-icon"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/header.css"/> 
+    <link rel = "stylesheet" type = "text/css" href = "../css/editProfile.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/generic.css"/> 
+    <script src="../js/editProfile.js"></script>
   </head>
   <body>
     <nav class = "navbar">
         <h1>
             <a href = "dashboard.html">
-                <img src="./img/Logo.ico" alt="Logo" class="imgLoged">
+                <img src="../img/Logo.ico" alt="Logo" class="imgLoged">
                 theWALL
             </a>
         </h1>
 
         <ul class="links">
             
-            <li><a href = "dashboard.html.html">Inicio</a></li>
-            <li><a href = "myprofile.html">Perfil</a></li>
-            <li><a href = "index.php">Cerrar Sesión</a></li>
+            <li><a href = "dashboard.php">Inicio</a></li>
+            <li><a href = "myprofile.php">Perfil</a></li>
+            <li><a href = "../index.php">Cerrar Sesión</a></li>
         </ul>
     </nav>
    <!---------------------------------->
@@ -37,7 +37,7 @@
     <div class = "dark-overlay">
         <div class="landing-inner">
           <div class="confSpace">
-            <img src="./img/face.png" alt="profPic" class="profPic">
+            <img src="../img/face.png" alt="profPic" class="profPic">
             <h1 class = "x-large">Configuración</h1>
             <div class="internal">
               <form class="campo" method="post" action="" onsubmit="return validarPerfil()">

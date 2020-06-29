@@ -11,17 +11,17 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <title>Mi Perfil</title>
-  <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-  <link rel="stylesheet" type="text/css" href="./css/header.css" />
-  <link rel="stylesheet" type="text/css" href="./css/profile.css" />
-  <link rel="stylesheet" type="text/css" href="./css/generic.css" />
+  <link rel="icon" href="../img/Logo.ico" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="../css/header.css" />
+  <link rel="stylesheet" type="text/css" href="../css/profile.css" />
+  <link rel="stylesheet" type="text/css" href="../css/generic.css" />
 </head>
 
 <body style="color: aliceblue;">
   <nav style="justify-content: flex-end;" class = "navbar">
     <h1>
         <a href = "dashboard.html">
-            <img src="./img/Logo.ico" alt="Logo" class="imgLoged">
+            <img src="../img/Logo.ico" alt="Logo" class="imgLoged">
             theWALL
         </a>
     </h1>
@@ -31,7 +31,7 @@
     <div class="landing-inner"> 
      <div class="wrapper">
         <div class="item2">
-          <img id="myphoto" class="round-img my-1"  src="./img/face.png" >
+          <img id="myphoto" class="round-img my-1"  src="../img/face.png" >
           <h1 id="myname">Nombre</h1>
         
           <ld id="myusuario" class="lead">nombre de usuario</ld><span style="float: right; padding-right: 10px;" class="icons my-1">
@@ -54,7 +54,7 @@
                     <div class="post">
                   
                       <div class="profPic">
-                        <img src="./img/face.png" alt="Foto de perfil">
+                        <img src="../img/face.png" alt="Foto de perfil">
                   
                       </div>
                   
@@ -64,7 +64,7 @@
                         <p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
 
                         <div class="imgContenedor">
-                                <img src="./img/meme.jpg" alt="imagenPost">
+                                <img src="../img/meme.jpg" alt="imagenPost">
                         </div>
                         <button class="likeBtn"><i class="fa fa-heart" aria-hidden="true"></i>
                         </button>
@@ -74,7 +74,7 @@
                     <div class="post">
                   
                       <div class="profPic">
-                        <img src="./img/face.png" alt="Foto de perfil">
+                        <img src="../img/face.png" alt="Foto de perfil">
                   
                       </div>
                   
@@ -84,7 +84,7 @@
                         <p class="textPost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae vitae quae reiciendis, sunt, ex earum adipisci ratione dolore architecto, iure nesciunt autem aperiam accusamus minus nemo! Ut, temporibus impedit.</p>
 
                         <div class="imgContenedor">
-                                <img src="./img/meme.jpg" alt="imagenPost">
+                                <img src="../img/meme.jpg" alt="imagenPost">
                         </div>
                         <button class="likeBtn"><i class="fa fa-heart" aria-hidden="true"></i>
                         </button>

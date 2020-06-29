@@ -1,10 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php
-// Conexión a la base de datos
-	require_once 'BD.php';
-
-	// Iniciar sesión
+// Iniciar sesión
 	if(!isset($_SESSION)){
 		session_start();
     }
@@ -18,22 +15,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>Mi Perfil</title>
-  <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-  <link rel="stylesheet" type="text/css" href="./css/header.css" />
-  <link rel="stylesheet" type="text/css" href="./css/myprofile.css" />
-  <link rel="stylesheet" type="text/css" href="./css/generic.css" />
-  <link rel="stylesheet" href="css/people.css">
-  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="icon" href="../img/Logo.ico" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="../css/header.css" />
+  <link rel="stylesheet" type="text/css" href="../css/myprofile.css" />
+  <link rel="stylesheet" type="text/css" href="../css/generic.css" />
+  <link rel="stylesheet" href="../css/people.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
 
-  <script src="js/people.js"></script>
-  <script src="js/post.js"></script>
+  <script src="../js/people.js"></script>
+  <script src="../js/post.js"></script>
 </head>
 
 <body>
   	<nav class = "navbar">
     	<h1>
       		<a href = "dashboard.html">
-        		<img src="./img/Logo.ico" alt="Logo" class="imgLoged">
+        		<img src="../img/Logo.ico" alt="Logo" class="imgLoged">
         		theWALL
       		</a>
     	</h1>
@@ -55,7 +52,7 @@
 				<div class="detalles">
 					<div class="perfil">
 						<div class="profPic">
-							<img src="./img/face.png" alt="Foto de perfil">
+							<img src="../img/face.png" alt="Foto de perfil">
 						</div>
 						<div class="names">
 							<h2>Nombre Completo</h2>
@@ -66,7 +63,7 @@
 					<div class="siguiendo">
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -79,7 +76,7 @@
 						</div>
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -92,7 +89,7 @@
 						</div>
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -105,7 +102,7 @@
 						</div>
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -118,7 +115,7 @@
 						</div>
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -131,7 +128,7 @@
 						</div>
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -144,7 +141,7 @@
 						</div>
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -157,7 +154,7 @@
 						</div>
 						<div class="person">
 							<div class="profPic">
-								<img src="./img/face.png" alt="Foto de perfil">
+								<img src="../img/face.png" alt="Foto de perfil">
 							</div>
 							<div class="description">
 								<a href="profile.html" class="usr_name">Franciso Tormenta</a>
@@ -202,7 +199,7 @@
                         ?>
                         <div class="post">
                             <div class="profPic">
-                                <img src="./img/face.png" alt="Foto de perfil">
+                                <img src="../img/face.png" alt="Foto de perfil">
                             </div>
                             <div class="contPost">
                                 <a href="profile.html" class="usr">Lolito</a>
