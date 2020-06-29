@@ -1,7 +1,5 @@
 <?php 
-    	require_once 'BD.php';
-
-        // Iniciar sesión
+    	// Iniciar sesión
         if(!isset($_SESSION)){
             session_start();
         }
