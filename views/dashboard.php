@@ -5,7 +5,6 @@
 	if(!isset($_SESSION)){
 		session_start();
     }
-    var_dump($_SESSION['id_usuario']);
     ?>
 <head>
     <meta charset="UTF-8">
@@ -54,83 +53,67 @@
                         </form>
                     <div class="wall">
                         <?php
-                        $u = $_SESSION['usuario'];
-                
-                        $sql = "SELECT * FROM mensaje WHERE usuarios_id = $u ORDER BY id DESC;";
+                        // Mientras se hacen pruebas
+                        // $usuario = $_SESSION['id_usuario'];
+                        $usuario = '1';
 
-                        $publis = mysqli_query($conn, $sql);
-
-                        if(!empty($publis) && mysqli_num_rows($publis)>=1):
-                        while ($publi = mysqli_fetch_assoc($publis)):
-                            
-                            $id= $publi['id'];
-                                
-                            $sql = "SELECT * FROM me_gusta WHERE mensaje_id = $id;";   
-                            $mgs = mysqli_query($conn, $sql);
-            
-                            $megusta=false;
-                            
-                            if(!empty($mgs) && mysqli_num_rows($mgs)>=1){
-                                $cant = mysqli_num_rows($mgs);
-                                var_dump($cant);
-                                while ($mg = mysqli_fetch_assoc($mgs)){
-                                    if($mg['usuarios_id'] == $_SESSION['usuario']){
-                                        $megusta=true;
-                                    }
-                                }
-                            }
+                        if($publicacionesMySQL):
+                            $count  = 0;
+                        foreach ($publicaciones as $publicacion):
                         ?>
                         <div class="post">
                             <div class="profPic">
-                                <img src="./img/face.png" alt="Foto de perfil">
+                                <?= '<img src="data:image/jpeg;base64,'.base64_encode( $publicacion['foto_contenido'] ).'"/>'?>
                             </div>
                             <div class="contPost">
-                                <a href="profile.html" class="usr">Lolito</a>
-                                <p class="textPost"><?= $publi['texto'];?></p>
-
+                                <a href="profile.html" class="usr"><?=$publicacion["nombreusuario"]?></a>
+                                <p class="textPost"><?= $publicacion['texto'];?></p>
+                             <?php 
+                                if($publicacion['imagen_contenido']):
+                            ?>
                                 <div class="imgContenedor">
-                                <img src="mostrarImagen.php?id=<?=$publi['id'];?>" width="600">
+                                <?= '<img src="data:image/jpeg;base64,'.base64_encode( $publicacion['imagen_contenido'] ).'" width="600" />'?>
                                 </div>
-                                <i class="likeBtn fa fa-heart fa-heart-o" aria-hidden="true" onclick=like(this)></i>
+                            <?php endif; 
 
-                                <?php 
-                                
-                                $id= $publi['id'];
-                                
-                                $sql = "SELECT * FROM me_gusta WHERE mensaje_id = $id;";   
-                                $mgs = mysqli_query($conn, $sql);
-                
-                                $megusta=false;
-                                
-                                if(!empty($mgs) && mysqli_num_rows($mgs)>=1){
-                                    $cant = mysqli_num_rows($mgs);
-                                    var_dump($cant);
-                                    while ($mg = mysqli_fetch_assoc($mgs)){
-                                        if($mg['usuarios_id'] == $_SESSION['usuario']){
-                                            $megusta=true;
-                                        }
+                    // L I K E / D I S L I K E
+                                $esLike = 'null';
+                                if ($megusta[$count]){$esLike = "Dislike";} else {$esLike = "Like";}
+
+                                // Esto se ejecutara cuando se presione el Like/Dislike
+                                // Cambia el Value del input y actualiza valores
+                                if($value = $_POST['like'.$count] ?? '') {
+                                    if ($megusta[$count]){
+                                        $esLike = "Like";
+                                        $res = $conMeGusta->quitarLike($usuario, $publicacion["id"]);
+                                        $likesArray[$count] = $conMeGusta->contarLikes($publicacion["id"]);
+                                        $megusta[$count] = $conMeGusta->dioLike($usuario, $publicacion["id"]);
+                                    } else {
+                                        $esLike = "Dislike";
+                                        $res = $conMeGusta->darLike($usuario, $publicacion["id"]);
+                                        $likesArray[$count] = $conMeGusta->contarLikes($publicacion["id"]);
+                                        $megusta[$count] = $conMeGusta->dioLike($usuario, $publicacion["id"]);
                                     }
                                 }
-                                // ONCLICK:      
-                                if($megusta = false){ 
-                                // megustear
-                                $sqf =" INSERT INTO me_gusta VALUES ('', '$u', '$id');";    
-                                $m = mysqli_query($conn, $sqf);    
-                                }else{
-                                //desmegustear     
-                                $squ ="DELETE FROM `me_gusta` WHERE `me_gusta`.`mensaje_id` = $id;";
-                                $g = mysqli_query($conn, $squ);     
-                                }
-                                ?>
-                                <span id="counter"><?php if(isset($cant)){ echo $cant; }else{ echo '0';} ?></span>
+                                
+                            ?>
+                                <form action="<?= $_SERVER['PHP_SELF']?>" method="POST">
+                                    <input type = "submit" value = "<?= $esLike;?>" name='like<?= $count?>' class="likeBtn"/>
+                                    <span id="counter"><?php echo $likesArray[$count];?></span>
+                                </form>
                             </div>
                         </div>  
                         <?php
-                        endwhile;
+                        $count++;
+                        endforeach;
                     else:
                     ?>
                     <div class="alerta"> No se encontraron mensajes en tu muro.</div>
-                    <?php endif; ?>
+                    <?php endif; 
+                    
+                        
+
+                    ?>
                     </div>
                 </div>
             </div>

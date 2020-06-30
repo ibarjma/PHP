@@ -13,7 +13,7 @@ class Conexion{
         }
     }
 
-    public function cerrar(){
+    public function __destruct (){
         $this->conection -> close();
     }
 }

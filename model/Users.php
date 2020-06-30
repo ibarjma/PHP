@@ -1,6 +1,6 @@
 <?php
 
-require 'Conexion.php';
+require_once 'Conexion.php';
 
 class Users extends Conexion{
     
@@ -19,7 +19,6 @@ class Users extends Conexion{
         try{
             $query = "SELECT id from usuarios WHERE nombreusuario='$usr' AND contrasenia='$pass'";
             $res = $this->conection->query($query);
-            $this->cerrar();
             if ($res->num_rows > 0){
                 while($row = $res->fetch_assoc()) {
                     return $row["id"];
@@ -48,7 +47,6 @@ class Users extends Conexion{
             $query = "SELECT id from usuarios WHERE ".$campo."='".$elemento."'";
             echo '<script>console.log("``````'.$query.'");</script>';
             $res = $this->conection->query($query);
-            $this->cerrar();
             if ($res->num_rows > 0){
                 while($row = $res->fetch_assoc()) {
                     return $row["id"];
