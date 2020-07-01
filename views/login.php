@@ -1,13 +1,3 @@
-<?php 
-    	require_once 'BD.php';
-
-        // Iniciar sesión
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        ?>
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,17 +9,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Iniciar Sesión</title>
-    <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-    <link rel = "stylesheet" type = "text/css" href = "./css/header.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "./css/generic.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "./css/login.css"/>
-    <script src="./js/login.js"></script>
+    <link rel="icon" href="../img/Logo.ico" type="image/x-icon"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/header.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/generic.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "../css/login.css"/>
+    <script src="../js/login.js"></script>
 </head>
 <body>
     <nav class = "navbar">
         <h1>
             <a href = "index.php">
-                <img src="./img/Logo.ico" alt="Logo">
+                <img src="../img/Logo.ico" alt="Logo">
                 theWALL
             </a>
         </h1>
@@ -52,7 +42,7 @@
             <!-- redirigir a dashboard o devolver una alerta -->
 
             
-            <form id="log_in" class="login" onsubmit="return validaringreso()" action="validarIni.php" method="POST">
+            <form id="log_in" class="login" onsubmit="return validaringreso();" action="login.php" method="POST">
                 <input name="user" type="text" id="usr" class="inputtext" placeholder="Nombre de Usuario">
                 <input name="pass" type="password" id="passwd" class="inputtext" placeholder="Contrase&ntilde;a">
                 <input type="submit" class="boton btn btn-primary" value="Iniciar Sesion">

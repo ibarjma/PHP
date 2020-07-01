@@ -102,6 +102,7 @@ form .options .publBtn{
 
     flex: 50%;
     max-width: 75%;
+    min-width: 75%;
     padding: 0 4px;
 }
 
@@ -149,16 +150,12 @@ form .options .publBtn{
 
 .post .contPost i{
     padding: 5px;
-    margin: 5px;
-    height: 30px;
-    background: none;
-    border: 0;
-    color: #505250;
 }
 
-.post .contPost .likeBtn:hover{
-    cursor: pointer;
-    color: #2dbc4e;
+.post .contPost .likeBtn{
+    border-radius: 5px;
+    border-color: #17a2b8;
+    background-color: #17a2b8;
 }
 
 .srcBtn{

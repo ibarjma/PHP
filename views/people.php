@@ -1,7 +1,6 @@
-<?php 
-    	require_once 'BD.php';
-
-        // Iniciar sesión
+<?php   
+        require_once '../model/Conexion.php';
+    	// Iniciar sesión
         if(!isset($_SESSION)){
             session_start();
         }
@@ -14,18 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Resultados de busqueda</title>
-    <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="./css/generic.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/people.css">
-    <script src="./js/people.js"></script>
+    <link rel="icon" href="../img/Logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/generic.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/people.css">
+    <script src="../js/people.js"></script>
 </head>
 <body class="people">
     <!-- Barra superior -->
     <nav class = "navbar">
         <h1>
             <a href = "dashboard.html">
-                <img src="./img/Logo.ico" alt="Logo" class="imgLoged">
+                <img src="../img/Logo.ico" alt="Logo" class="imgLoged">
                 theWALL
             </a>
         </h1>
@@ -55,7 +54,7 @@
                     if($_GET['busqueda']){
                         $bus = $_GET['busqueda'];
                         $sql= "SELECT * FROM usuarios WHERE concat_ws(nombre, apellido, nombreusuario) LIKE '%$bus%' ";
-                        $buscar = mysqli_query($conn, $sql);
+                        $buscar = mysqli_query($conection, $sql);
                     }
                     if(!empty($buscar) && mysqli_num_rows($buscar)>=1):
                         while ($busca = mysqli_fetch_assoc($buscar)):
