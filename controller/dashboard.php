@@ -9,7 +9,7 @@
     require_once '../model/Users.php';
     $conUsers = new Users();
 
-    // 1. Obtener ID del usuario logueado
+    // 1. Obtener ID del usuario logueado 
     //$usuario = $_SESSION["id_usuario"];
     $usuario = 1; //Solo para testear
 

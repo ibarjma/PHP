@@ -1,12 +1,7 @@
 <?php
 // Conexión a la base de datos
-	require_once '../model/MeGusta.php';
-    $conMeGusta = new MeGusta();
-
-    $publicacion["id"] = '1';
-    $usuario = '2';
-    $likesArray = $conMeGusta->contarLikes($publicacion["id"]);
-    $megusta = $conMeGusta->dioLike($usuario, $publicacion["id"]);
+	require_once '../model/Mensaje.php';
+    $con = new Mensaje();
 ?>
 
 <!DOCTYPE html>
@@ -22,29 +17,25 @@
 
 <?php  
 
-$esLike = 'null';
-if ($megusta){$esLike = "Dislike";} else {$esLike = "Like";}
+    $usuario = '1';
 
-
-    if($_POST['like']) {
-        if ($megusta){
-            $esLike = "Like";
-            $res = $conMeGusta->quitarLike($usuario, $publicacion["id"]);
-            $likesArray = $conMeGusta->contarLikes($publicacion["id"]);
-            $megusta = $conMeGusta->dioLike($usuario, $publicacion["id"]);
-            echo "<script>console.log('---".$likesArray."---".$megusta."')</script>";
+    
+    if(isset($_POST['publicar'])) {
+        if ( $_FILES['unaimagen']['tmp_name'] != "none" ){
+            $con->publicar($usuario, $_POST['texto'], $_FILES['unaimagen']['tmp_name'], $_FILES["unaimagen"]["type"]);
         } else {
-            $esLike = "Dislike";
-            $res = $conMeGusta->darLike($usuario, $publicacion["id"]);
-            $likesArray = $conMeGusta->contarLikes($publicacion["id"]);
-            $megusta = $conMeGusta->dioLike($usuario, $publicacion["id"]);
-            echo "<script>console.log('---".$likesArray."---".$megusta."')</script>";
+            $con->publicar($usuario, $_POST['texto'],);
         }
     }
+
 ?>
-    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-        <input type = "submit" value = "<?php echo $esLike;?>" name='like' class="likeBtn"/>
-        <span id="counter"><?php echo $likesArray;?></span>
+    <form class="publicar" method="POST" action="<?= $_SERVER['PHP_SELF']?>"  enctype="multipart/form-data">
+        <label>Crear Publicacion:</label>
+        <textarea type="text" name='texto' class="toPost" maxlength="140"></textarea>
+        <div class="options">
+            <input type="file" name="unaimagen" class="botonimagen" alt="Sube una foto" accept="image/png,image/gif,image/jpeg">
+            <input type="submit" class="publBtn" value="Publicar" name="publicar">
+        </div>
     </form>
 
 </body>

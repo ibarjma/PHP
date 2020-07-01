@@ -87,6 +87,8 @@
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  font-family: "Font Awesome 5 Brands";
+  content: "\f004";
 }
 
 /*Resize the wrap to see the search bar change!*/

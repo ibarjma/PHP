@@ -5,6 +5,20 @@
 	if(!isset($_SESSION)){
 		session_start();
     }
+
+    // Mientras se hacen pruebas
+    // $usuario = $_SESSION['id_usuario'];
+    $usuario = '1';
+
+    
+    if(isset($_POST['publicar'])) {
+        if ( $_FILES['unaimagen']['tmp_name'] != "none" ){
+            $conMensaje->publicar($usuario, $_POST['texto'], $_FILES['unaimagen']['tmp_name'], $_FILES["unaimagen"]["type"]);
+        } else {
+            $conMensaje->publicar($usuario, $_POST['texto'],);
+        }
+    }
+
     ?>
 <head>
     <meta charset="UTF-8">
@@ -29,7 +43,9 @@
 
         <form class="search" action="people.php" method="GET">
             <input type="text" name="busqueda" class="searchTerm" placeholder="¿Busca a alguien?">
-            <input type="submit" value="buscar" class="srcBtn" >
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
          </form>
 
         <ul class="links">
@@ -43,19 +59,16 @@
         <div class = "dark-overlay">
             <div class="landing-inner">
                 <div class="PagCont">
-                    <form class="publicar" method="POST" action="crearPubli.php"  enctype="multipart/form-data">
+                    <form class="publicar" method="POST" action="<?= $_SERVER['PHP_SELF']?>"  enctype="multipart/form-data">
                         <label>Crear Publicacion:</label>
                         <textarea type="text" name='texto' class="toPost" maxlength="140"></textarea>
                         <div class="options">
                             <input type="file" name="unaimagen" class="botonimagen" alt="Sube una foto" accept="image/png,image/gif,image/jpeg">
-                            <input type="submit" class="publBtn" value="Publicar">
+                            <input type="submit" class="publBtn" value="Publicar" name="publicar">
                         </div>
-                        </form>
+                    </form>
                     <div class="wall">
                         <?php
-                        // Mientras se hacen pruebas
-                        // $usuario = $_SESSION['id_usuario'];
-                        $usuario = '1';
 
                         if($publicacionesMySQL):
                             $count  = 0;
@@ -68,28 +81,26 @@
                             <div class="contPost">
                                 <a href="profile.html" class="usr"><?=$publicacion["nombreusuario"]?></a>
                                 <p class="textPost"><?= $publicacion['texto'];?></p>
-                             <?php 
-                                if($publicacion['imagen_contenido']):
-                            ?>
                                 <div class="imgContenedor">
-                                <?= '<img src="data:image/jpeg;base64,'.base64_encode( $publicacion['imagen_contenido'] ).'" width="600" />'?>
-                                </div>
-                            <?php endif; 
+                             <?php 
+                                if($publicacion['imagen_contenido']){
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode( $publicacion['imagen_contenido'] ).'" width="600" />';
+                                } 
 
-                    // L I K E / D I S L I K E
-                                $esLike = 'null';
-                                if ($megusta[$count]){$esLike = "Dislike";} else {$esLike = "Like";}
+                                // L I K E / D I S L I K E
+                                $esLike = '';
+                                if ($megusta[$count]){$esLike = "";} else {$esLike = " fa-heart-o";}
 
                                 // Esto se ejecutara cuando se presione el Like/Dislike
                                 // Cambia el Value del input y actualiza valores
-                                if($value = $_POST['like'.$count] ?? '') {
+                                if(isset($_POST['like'.$count])) {
                                     if ($megusta[$count]){
-                                        $esLike = "Like";
+                                        $esLike = " fa-heart-o";
                                         $res = $conMeGusta->quitarLike($usuario, $publicacion["id"]);
                                         $likesArray[$count] = $conMeGusta->contarLikes($publicacion["id"]);
                                         $megusta[$count] = $conMeGusta->dioLike($usuario, $publicacion["id"]);
                                     } else {
-                                        $esLike = "Dislike";
+                                        $esLike = "";
                                         $res = $conMeGusta->darLike($usuario, $publicacion["id"]);
                                         $likesArray[$count] = $conMeGusta->contarLikes($publicacion["id"]);
                                         $megusta[$count] = $conMeGusta->dioLike($usuario, $publicacion["id"]);
@@ -97,9 +108,12 @@
                                 }
                                 
                             ?>
+                            </div>
                                 <form action="<?= $_SERVER['PHP_SELF']?>" method="POST">
-                                    <input type = "submit" value = "<?= $esLike;?>" name='like<?= $count?>' class="likeBtn"/>
-                                    <span id="counter"><?php echo $likesArray[$count];?></span>
+                                    <button type="submit" class="likeBtn" name='like<?= $count?>' class="likeBtn">
+                                        <i class="fa fa-heart<?= $esLike;?>" onclick=like(this)><?= " ".$likesArray[$count];?></i>
+                                    </button>
+
                                 </form>
                             </div>
                         </div>  

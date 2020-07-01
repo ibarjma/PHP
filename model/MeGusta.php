@@ -26,9 +26,7 @@ class MeGusta extends Conexion{
         try{
             $res = $this->conection->query($query);
             if ($res->num_rows > 0){
-                while($row = $res->fetch_assoc()) {
-                    return $row["id"];
-                }
+                return True;
             } else {
                 return NULL;
             }
@@ -42,7 +40,6 @@ class MeGusta extends Conexion{
         $query = "INSERT INTO me_gusta VALUES ('', \"".$usuario."\", \"".$publicacion."\");";
         try{
             $res = $this->conection->query($query);
-            echo "<script>console.log('-------".$res."--------')</script>";
             if ($res){
                 return True;
             } else {

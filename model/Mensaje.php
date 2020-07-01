@@ -22,5 +22,20 @@ class Mensaje extends Conexion{
             echo 'Excepción capturada: ',  $e->getMessage(), "\n";
         }
     }
+
+    public function publicar($usuario, $mensaje, $imagen=NULL, $tipo_imagen=NULL){
+        //INSERT INTO mensaje VALUES('', $mensaje, $imagen, NULL, '3', now())
+        $query = 'INSERT INTO mensaje VALUES("", "'.$mensaje.'", "'.addslashes(file_get_contents($imagen)).'", "'.$this->conection->real_escape_string($tipo_imagen).'", "'.$usuario.'", now())';
+        try{
+            $res = $this->conection->query($query);
+            if ($res){
+                    return $res;
+            } else {
+                return NULL;
+            }
+        }catch (Exception $e){
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
+    }
 }
 ?>
