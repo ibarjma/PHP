@@ -9,9 +9,27 @@
     require_once '../model/Users.php';
     $conUsers = new Users();
 
+
+    // Iniciar sesión
+    session_start();
+    if(!isset($_SESSION["id_usuario"])){
+        // Si trata de entrar a dashboard.php sin estar logueado, lo manda al login.php
+        header("location: login.php");
+    }
+
+    // Publicar un post
+    if(isset($_POST['publicar'])) {
+        if ( $_FILES['unaimagen']['tmp_name'] != "none" ){
+            $conMensaje->publicar($usuario, $_POST['texto'], $_FILES['unaimagen']['tmp_name'], $_FILES["unaimagen"]["type"]);
+        } else {
+            $conMensaje->publicar($usuario, $_POST['texto'],);
+        }
+    }
+
+
     // 1. Obtener ID del usuario logueado 
-    //$usuario = $_SESSION["id_usuario"];
-    $usuario = 1; //Solo para testear
+    $usuario = $_SESSION["id_usuario"];
+    // $usuario = 1; //Solo para testear
 
     // 2. Obtener lista de personas a las que sigue
     $seguidos = $conSiguiendo->SeguidosPor($usuario);
@@ -43,7 +61,6 @@
     } 
     
     // 5. Mostrar publicaciones
-
     require '../views/dashboard.php';
     
 ?>

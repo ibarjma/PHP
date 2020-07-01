@@ -4,8 +4,10 @@
 	$con = new Users();
 
 	// Iniciar sesión
-	if(!isset($_SESSION)){
-		session_start();
+	session_start();
+	if(isset($_SESSION["id_usuario"])){
+		// Si trata de entrar a register.php estando logueado, lo manda al dashboard.php
+        header("location: dashboard.php");
 	}
 	require '../views/register.php';
 	

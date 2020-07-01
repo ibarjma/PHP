@@ -16,11 +16,14 @@ class Users extends Conexion{
     }
 
     public function loginUser($usr, $pass){
+        echo "<script>console.log('=======".$usr."=======".$pass."')</script>";
         try{
             $query = "SELECT id from usuarios WHERE nombreusuario='$usr' AND contrasenia='$pass'";
+            echo "<script>console.log('********".$query."')</script>";
             $res = $this->conection->query($query);
             if ($res->num_rows > 0){
                 while($row = $res->fetch_assoc()) {
+                    echo "<script>console.log('~~~~~~~~~".$row["id"]."')</script>";
                     return $row["id"];
                 }
             } else {

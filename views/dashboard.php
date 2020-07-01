@@ -1,25 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php
-	// Iniciar sesión
-	if(!isset($_SESSION)){
-		session_start();
-    }
-
-    // Mientras se hacen pruebas
-    // $usuario = $_SESSION['id_usuario'];
-    $usuario = '1';
-
-    
-    if(isset($_POST['publicar'])) {
-        if ( $_FILES['unaimagen']['tmp_name'] != "none" ){
-            $conMensaje->publicar($usuario, $_POST['texto'], $_FILES['unaimagen']['tmp_name'], $_FILES["unaimagen"]["type"]);
-        } else {
-            $conMensaje->publicar($usuario, $_POST['texto'],);
-        }
-    }
-
-    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,7 +32,7 @@
             
             <li><a href = "dashboard.php">Inicio</a></li>
             <li><a href = "myprofile.php">Perfil</a></li>
-            <li><a href = "index.php">Cerrar sesión</a></li>
+            <li><a href = "cerrarsesion.php">Cerrar sesión</a></li>
         </ul>
     </nav>
     <section class = "landing">

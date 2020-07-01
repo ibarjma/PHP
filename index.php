@@ -1,10 +1,3 @@
-<?php 
-    // Iniciar sesión
-    if(!isset($_SESSION)){
-        session_start();
-    }
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,6 +10,7 @@
    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Index</title>
     <link rel="icon" href="./img/Logo.ico" type="image/x-icon"/>
@@ -35,7 +29,9 @@
 
         <form class="search" action="people.php" method="GET">
             <input type="text" name="busqueda" class="searchTerm" placeholder="¿Busca a alguien?">
-            <input type="submit" value="buscar" class="srcBtn" >
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
          </form>
 
         <ul>
@@ -56,7 +52,7 @@
                 </p>
                 <div class="buttons">
                     <a href="register.php" class = "btn btn-primary">Registrate</a>
-                    <a href="login.php" class = "btn btn-light">Inicia Sesión</a>
+                    <a href="controller/login.php" class = "btn btn-light">Inicia Sesión</a>
                 </div>      
                 <?php
                         if(isset($_SESSION['completado'])){
