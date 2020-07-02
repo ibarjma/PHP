@@ -19,6 +19,7 @@
     	$apellido = $_POST['apellido'];
 		$email = $_POST['email'];
 		$pas = $_POST['pass'];
+		$repeatpas = $_POST['repeatpass'];
 		$imagen = $_FILES['perfilimagen'];
 		$imageType = pathinfo($imagen['name'],PATHINFO_EXTENSION);
 
@@ -46,6 +47,10 @@
 		if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/", $pas)){
 			$regexCheck=TRUE;
 			$regexLog = $regexLog."Password poco segura.\\n";
+		}
+		if ($repeatpas != $pass){
+			$regexCheck=TRUE;
+			$regexLog = $regexLog."Los passwords no son iguales.\\n";
 		}
 		try{
 			if(!getimagesize($imagen["tmp_name"]) && !($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif" )){

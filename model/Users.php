@@ -51,14 +51,77 @@ class Users extends Conexion{
             $query = "SELECT id from usuarios WHERE ".$campo."='".$elemento."'";
             $res = $this->conection->query($query);
             if ($res->num_rows > 0){
+                $temp = array();
                 while($row = $res->fetch_assoc()) {
-                    return $row["id"];
+                    $temp[] = $row["id"];
+                }
+                return $temp;
+            } else {
+                return NULL;
+            }
+        }catch (Exception $e){
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
+    }
+    public function contenidoById ($id){
+        try{
+            $query = "SELECT nombreusuario, apellido, nombre, foto_contenido, foto_tipo from usuarios WHERE id ='".$id."'";
+            // echo '<script>console.log("``````'.$query.'");</script>';
+            $res = $this->conection->query($query);
+            if ($res->num_rows > 0){
+                while($row = $res->fetch_assoc()) {
+                    return $row;
                 }
             } else {
                 return NULL;
             }
         }catch (Exception $e){
             echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
+    }
+    public function cuentaById($id){
+        try{
+            $query = "SELECT email, contrasenia from usuarios WHERE id ='".$id."'";
+            // echo '<script>console.log("``````'.$query.'");</script>';
+            $res = $this->conection->query($query);
+            if ($res->num_rows > 0){
+                while($row = $res->fetch_assoc()) {
+                    return $row;
+                }
+            } else {
+                return NULL;
+            }
+        }catch (Exception $e){
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
+    }
+    public function updatePerfil($user, $nombre, $apellido, $profPic, $profPicType, $id){
+                                //$user, $nombre, $apellido, $imagen['tmp_name'], $imageType
+        try{
+            //UPDATE usuarios SET apellido='$apellido', nombre='$nombre', nombreusuario='$user', foto_contenido='addslashes(file_get_contents($pic))', foto_tipo='$profPicType' WHERE id='$id
+            if($profPic){
+                $query = "UPDATE usuarios SET apellido='$apellido', nombre='$nombre', nombreusuario='$user', foto_contenido=\"".addslashes(file_get_contents($profPic))."\", foto_tipo='$profPicType' WHERE id='$id'";
+            } else {
+                $query = "UPDATE usuarios SET apellido='$apellido', nombre='$nombre', nombreusuario='$user' WHERE id='$id'";
+            }
+            $res = NULL;
+            $res = $this->conection->query($query);
+        }catch (Exception $e){
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        } finally {
+            return $res;
+        }
+    }
+    public function updateCuenta($email, $pass, $id){
+        try{
+            //UPDATE usuarios SET email='$email', contrasenia='$pass' WHERE id='$id'
+            $query = "UPDATE usuarios SET email='$email', contrasenia='$pass' WHERE id='$id'";
+            $res = NULL;
+            $res = $this->conection->query($query);
+        }catch (Exception $e){
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        } finally {
+            return $res;
         }
     }
 

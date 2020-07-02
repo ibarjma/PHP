@@ -28,42 +28,47 @@
             
             <li><a href = "dashboard.php">Inicio</a></li>
             <li><a href = "myprofile.php">Perfil</a></li>
-            <li><a href = "../index.php">Cerrar Sesión</a></li>
+            <li><a href = "../cerrarsesion.php">Cerrar Sesión</a></li>
         </ul>
     </nav>
-   <!---------------------------------->
+   <!--------------------------------->
   
    <section class = "landing">
     <div class = "dark-overlay">
         <div class="landing-inner">
           <div class="confSpace">
-            <img src="../img/face.png" alt="profPic" class="profPic">
+          <?= '<img src="data:image/'.$UsuarioDatos['foto_tipo'].';base64,'.base64_encode( $UsuarioDatos['foto_contenido'] ).'" alt="profPic" class="profPic"/>'?>
             <h1 class = "x-large">Configuración</h1>
+            <?php
+                if(isset($_SESSION['log_cuenta'])){
+                    echo ($_SESSION['log_cuenta']);
+                    $_SESSION['log_cuenta'] = "";
+                }
+            ?>
             <div class="internal">
-              <form class="campo" method="post" action="" onsubmit="return validarPerfil()">
+              <form class="campo" method="post" action="" onsubmit="return validarPerfil()" enctype="multipart/form-data">
                 <h3>Perfil</h3>
 
-                  <input type="text" placeholder="Nombre de Usuario" id="usr_name" class="imputtext" value="Usuario0">
+                  <input type="text" name="user" placeholder="Nombre de Usuario" id="usr_name" class="imputtext" value="<?= $UsuarioDatos['nombreusuario'] ?>">
 
-                  <input type="text" name="user" placeholder="Nombre" id="name" class="imputtext" value="Pancho">
+                  <input type="text" name="nombre" placeholder="Nombre" id="name" class="imputtext" value="<?= $UsuarioDatos['nombre'] ?>">
                         
-                  <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" value="Pantera">
+                  <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="imputtext" value="<?= $UsuarioDatos['apellido'] ?>">
               
                   <label for="circulo">Cambiar foto de perfil</label>
                   <br>
-                  <input type="file" accept="image/png,image/gif,image/jpeg" name="perfilimagen" class="perfil" id="fileChooser" onchange="return verPreview()">
-                  <img src="" id="preview" class="preview">
-                  <input class="boton" type="submit" value = "Guardar")/>
+                  <input type="file" accept="image/png,image/gif,image/jpeg" name="perfilimagen" class="perfil" id="fileChooser">
+                  <input class="boton" type="submit" value = "Guardar" name="perfil"/>
               </form>
               <div class="divisor"></div>
               <form action="" class="campo" method="POST" onsubmit="return validarCuenta()">
                 <h3>Cuenta</h3>
-                <input type="text" class = "inputtext" id="email" placeholder="Email" value="mail@ejemplo.com"><br>
+                <input type="text" class = "inputtext" name="email" id="email" placeholder="Email" value="<?= $cuentaDatos['email'] ?>"><br>
                 <label for="pass">Cambiar contraseña</label>
                  <br> 
-                <input type="password" placeholder="Contraseña" id="passwd" class="imputtext" value="password">  
-                <input type="password" placeholder="Repetir Contraseña" id="confirmpasswd" class="imputtext" value="password">
-                <input class="boton" type="submit" value = "Guardar"/>
+                <input type="password" placeholder="Contraseña" name="pass" id="passwd" class="imputtext" value="<?= $cuentaDatos['contrasenia'] ?>">  
+                <input type="password" placeholder="Repetir Contraseña" name="repeatpass" id="confirmpasswd" class="imputtext" value="<?= $cuentaDatos['contrasenia'] ?>">
+                <input class="boton" type="submit" value = "Guardar" name="cuenta"/>
               </form>
             </div>
           </div>

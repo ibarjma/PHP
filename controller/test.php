@@ -3,16 +3,7 @@
 	require_once '../model/Users.php';
     $con = new Users();
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){ 
-
-        $imagen = $_FILES['perfilimagen'];
-        $imageType = pathinfo($imagen['name'],PATHINFO_EXTENSION);
-
-        echo "<script>console.log('****".$imageType."')</script>";
-
-    }
-    // $res = $con->registUser('gballesteros', 'Guillermo', 'Ballesteros', 'mail@mail.com', 'Balb980802');
-
+    $con->updateCuenta('ppmail@mail.com', 'EstoNoEsSeguro', '2');
 		
 ?>
 

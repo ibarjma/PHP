@@ -24,7 +24,6 @@ function validarPerfil(){
         alert(errores);
         return false;
       }else{
-      alert("El formulario ha sido enviado con éxito.");
       return true;
             }
           }
@@ -54,34 +53,6 @@ function validarCuenta(){
       alert(errores);
       return false;
     }else{
-        alert("El formulario ha sido enviado con éxito.");
         return true;
         }
     }
-
-function verPreview(){
-    var prev = document.getElementById('preview');
-    var fuData = document.getElementById('fileChooser');
-    var FileUploadPath = fuData.value;
-
-    var Extension = FileUploadPath.substring(
-    FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
-
-//El archivo es una imagen?
-
-    if (Extension == "gif" || Extension == "png" || Extension == "bmp"|| Extension == "jpeg" || Extension == "jpg") {
-        if (fuData.files && fuData.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                prev.src= e.target.result;
-                prev.style.display = "initial";
-            }
-            reader.readAsDataURL(fuData.files[0]);
-        }
-
-    } 
-    else {
-                alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
-
-            }
-}
