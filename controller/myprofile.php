@@ -9,6 +9,13 @@
     require_once '../model/Users.php';
     $conUsers = new Users();
 
+    // Iniciar sesión
+    session_start();
+    if(!isset($_SESSION["id_usuario"])){
+        // Si trata de entrar a myprofile.php sin estar logueado, lo manda al login.php
+        header("location: login.php");
+    }
+
     $usuario = $_SESSION["id_usuario"];
 
     require '../views/myprofile.php';

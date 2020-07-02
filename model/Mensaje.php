@@ -25,7 +25,7 @@ class Mensaje extends Conexion{
 
     public function publicar($usuario, $mensaje, $imagen=NULL, $tipo_imagen=NULL){
         //INSERT INTO mensaje VALUES('', $mensaje, $imagen, NULL, '3', now())
-        $query = 'INSERT INTO mensaje VALUES("", "'.$mensaje.'", "'.addslashes(file_get_contents($imagen)).'", "'.$this->conection->real_escape_string($tipo_imagen).'", "'.$usuario.'", now())';
+        $query = 'INSERT INTO mensaje VALUES("", "'.$mensaje.'", "'.addslashes(file_get_contents($imagen)).'", "'.$tipo_imagen.'", "'.$usuario.'", now())';
         try{
             $res = $this->conection->query($query);
             if ($res){

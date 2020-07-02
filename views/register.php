@@ -21,7 +21,7 @@
                 </a>
             </h1>
             <ul>
-                <li><a href = "login.html">Iniciar Sesión</a></li>
+                <li><a href = "login.php">Iniciar Sesión</a></li>
             </ul>
         </nav>
         <!---------------------------------->
@@ -53,7 +53,7 @@
                     </form>
 
                     <p>
-                    Ya tienes una cuenta? <a href="login.html">Ingresa</a></p>
+                    Ya tienes una cuenta? <a href="login.php">Ingresa</a></p>
                 </div>
             </div>
         </section>

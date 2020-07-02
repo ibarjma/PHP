@@ -20,7 +20,7 @@
     // Publicar un post
     if(isset($_POST['publicar'])) {
         if ( $_FILES['unaimagen']['tmp_name'] != "none" ){
-            $conMensaje->publicar($usuario, $_POST['texto'], $_FILES['unaimagen']['tmp_name'], $_FILES["unaimagen"]["type"]);
+            $conMensaje->publicar($usuario, $_POST['texto'], $_FILES['unaimagen']['tmp_name'], pathinfo($_FILES["unaimagen"]['name'],PATHINFO_EXTENSION));
         } else {
             $conMensaje->publicar($usuario, $_POST['texto'],);
         }

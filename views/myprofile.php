@@ -1,11 +1,5 @@
 <!doctype html>
 <html lang="en">
-<?php
-// Iniciar sesión
-	if(!isset($_SESSION)){
-		session_start();
-    }
-    ?>
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">

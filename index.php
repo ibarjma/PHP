@@ -1,9 +1,7 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
-      
-      
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +33,7 @@
          </form>
 
         <ul>
-            <li><a href = "register.php">Registrarse</a></li>
+            <li><a href = "controller/register.php">Registrarse</a></li>
             <li><a href = "controller/login.php">Iniciar Sesión</a></li>
         </ul>
     </nav>
@@ -51,16 +49,12 @@
                    La red social que revolucionará el planeta
                 </p>
                 <div class="buttons">
-                    <a href="register.php" class = "btn btn-primary">Registrate</a>
+                    <a href="controller/register.php" class = "btn btn-primary">Registrate</a>
                     <a href="controller/login.php" class = "btn btn-light">Inicia Sesión</a>
                 </div>      
                 <?php
-                        if(isset($_SESSION['completado'])){
-                            echo ($_SESSION['completado']);
-                        }else{
-                            if(isset($_SESSION['errores'])){
-                                echo ($_SESSION['errores']);
-                            }
+                        if(isset($_SESSION['registro'])){
+                            echo ($_SESSION['registro']);
                         }
                 ?>
             </div>

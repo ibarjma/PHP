@@ -1,7 +1,19 @@
 <?php
 // Conexión a la base de datos
-	require_once '../model/Mensaje.php';
-    $con = new Mensaje();
+	require_once '../model/Users.php';
+    $con = new Users();
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){ 
+
+        $imagen = $_FILES['perfilimagen'];
+        $imageType = pathinfo($imagen['name'],PATHINFO_EXTENSION);
+
+        echo "<script>console.log('****".$imageType."')</script>";
+
+    }
+    // $res = $con->registUser('gballesteros', 'Guillermo', 'Ballesteros', 'mail@mail.com', 'Balb980802');
+
+		
 ?>
 
 <!DOCTYPE html>
@@ -15,28 +27,14 @@
 </head>
 <body>
 
-<?php  
+<form id="validacion" class="registro" onsubmit="" action="test.php" method="POST" enctype="multipart/form-data">
 
-    $usuario = '1';
-
-    
-    if(isset($_POST['publicar'])) {
-        if ( $_FILES['unaimagen']['tmp_name'] != "none" ){
-            $con->publicar($usuario, $_POST['texto'], $_FILES['unaimagen']['tmp_name'], $_FILES["unaimagen"]["type"]);
-        } else {
-            $con->publicar($usuario, $_POST['texto'],);
-        }
-    }
-
-?>
-    <form class="publicar" method="POST" action="<?= $_SERVER['PHP_SELF']?>"  enctype="multipart/form-data">
-        <label>Crear Publicacion:</label>
-        <textarea type="text" name='texto' class="toPost" maxlength="140"></textarea>
-        <div class="options">
-            <input type="file" name="unaimagen" class="botonimagen" alt="Sube una foto" accept="image/png,image/gif,image/jpeg">
-            <input type="submit" class="publBtn" value="Publicar" name="publicar">
-        </div>
-    </form>
+                        <label for="circulo">Elige una imagen de perfil</label>
+                        <br>
+                        <input type="file" accept="image/png,image/gif,image/jpeg" id="circulo" name="perfilimagen" class="perfil">
+                        
+                        <input class="boton" id="confirm" type="submit" value ="Send"/>
+                    </form>
 
 </body>
 </html>

@@ -18,7 +18,7 @@
 <body>
     <nav class = "navbar">
         <h1>
-            <a href = "index.php">
+            <a href = "../index.php">
                 <img src="../img/Logo.ico" alt="Logo">
                 theWALL
             </a>

@@ -20,9 +20,7 @@
 		$email = $_POST['email'];
 		$pas = $_POST['pass'];
 		$imagen = $_FILES['perfilimagen'];
-		$target_dir = "../img/prof/";
-		$target_file = $target_dir."User_".$user;		//Añadir, después de agregar a BD el ID como identificador de la foto.
-		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+		$imageType = pathinfo($imagen['name'],PATHINFO_EXTENSION);
 
 		$regexCheck=FALSE;
 		$regexLog="";
@@ -62,7 +60,7 @@
 			echo '<script>alert("'.$regexLog.'");</script>';
 			exit("Error en registro");
 		} else{
-			echo "<script>console.log('Todo ok con los datos')</script>";
+			// echo "<script>console.log('Todo ok con los datos')</script>";
 		}
 		
 		// 2.- Verificamos que usuario y correo no exista antes:
@@ -77,51 +75,16 @@
 		}
 				//Si no existe, Seguir
 
-		// 3.- Guardamos imagen
+		// 3.- Registramos usuario	  $usr, $name, $lastname, $mail, $pass, $pic, $picFormat
+		$respuesta = $con->registUser($user, $nombre, $apellido, $email, $pas, $imagen['tmp_name'], $imageType);
 
-		// 4.- Registramos usuario
-		// $con->registUser($user, $nombre, $apellido, $email, $pas, $pic, $picFormat)
-		// 5.- Alerta de Completo y regresamos a index.php
-	
-    // if(!is_dir('images')){
-	// 	mkdir('images', 0777);
-	// }
-	
-	// move_uploaded_file($imagen['tmp_name'], 'images/'.$filename);
-
-	// 		$gestor = opendir('./images');
-			
-	// 		if($gestor):
-	// 			while(($imagen = readdir($gestor)) !== false):
-	// 				if($imagen != '.' && $imagen != '..'):
-	// 					echo "<img src='images/$imagen' width='200px'/><br/>";
-	// 				endif;
-	// 			endwhile;
-	// 		endif;
-
-	// Validar que el user no exista y que la imagen esté definida
-	// $errores = 0;
-
-	// if($errores == 0){
-	// 	// Cifrar la contraseña
-	// 	$password_segura = password_hash($pas, PASSWORD_BCRYPT, ['cost'=>4]);
+		// 4.- Alerta de Completo y regresamos a index.php
+		if($respuesta){
+				 $_SESSION['registro'] = "El registro se ha completado con éxito: inicia sesión.";
+			}else{
+				$_SESSION['registro'] = "El usuario no se pudo registrar. Intente de nuevo, por favor.";
+		}
 		
-	// 	// INSERTAR USUARIO EN LA TABLA USUARIOS DE LA BBDD
-
-	// 	$sql = "INSERT INTO usuarios VALUES ( '', '$apellido', '$nombre', '$email', '$user', '$pas', '$contenido' , '$ext')";
-	// 	$guardar = mysqli_query($conn, $sql);
-	// 	var_dump($guardar);
-
-	// 	if($guardar){
-	// 		$_SESSION['completado'] = "El registro se ha completado con éxito: inicia sesión.";
-	// 	}else{
-	// 		$_SESSION['errores'] = "El usuario no se pudo registrar";
-	// 	}
-		
-	// }else{
-	// 	$_SESSION['errores'] = $errores;
-	// }
-
-	// header('Location: index.php');
+		header('Location: ../index.php');
 }
 ?>

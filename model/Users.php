@@ -5,11 +5,13 @@ require_once 'Conexion.php';
 class Users extends Conexion{
     
     public function registUser($usr, $name, $lastname, $mail, $pass, $pic, $picFormat){
+        // INSERT INTO usuarios VALUES ($lastname, $name, $mail, $usr, $pass, $pic, $picFormat)
         try{
-            $query = "INSERT INTO usuarios VALUES ($lastname, $name, $mail, $usr, $pass, $pic, $picFormat)";
-            $res = $this->$conection->query($query);
+            $res = NULL;
+            $query = "INSERT INTO usuarios VALUES ('', '$lastname', '$name', '$mail', '$usr', '$pass', \"".addslashes(file_get_contents($pic))."\", \"".$picFormat."\")";
+            $res = $this->conection->query($query);
         }catch (Exception $e){
-            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+            echo '<script>console.log("'.$e->getMessage().'");</script>';
         }finally{
             return $res;
         }
@@ -19,11 +21,9 @@ class Users extends Conexion{
         echo "<script>console.log('=======".$usr."=======".$pass."')</script>";
         try{
             $query = "SELECT id from usuarios WHERE nombreusuario='$usr' AND contrasenia='$pass'";
-            echo "<script>console.log('********".$query."')</script>";
             $res = $this->conection->query($query);
             if ($res->num_rows > 0){
                 while($row = $res->fetch_assoc()) {
-                    echo "<script>console.log('~~~~~~~~~".$row["id"]."')</script>";
                     return $row["id"];
                 }
             } else {
@@ -36,6 +36,7 @@ class Users extends Conexion{
 
     public function updateSome($id, $campo, $actualizacion){
         try{
+            $res = NULL;
             $query = "UPDATE usuarios SET $campo=$actualizacion where id=$id";
             $res = $conection->query($query);
         }catch (Exception $e){
@@ -48,7 +49,6 @@ class Users extends Conexion{
     public function idByCamp($campo, $elemento){
         try{
             $query = "SELECT id from usuarios WHERE ".$campo."='".$elemento."'";
-            echo '<script>console.log("``````'.$query.'");</script>';
             $res = $this->conection->query($query);
             if ($res->num_rows > 0){
                 while($row = $res->fetch_assoc()) {
